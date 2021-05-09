@@ -1,13 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>Document</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>My Shopping list</title>
+    <style>
+        html,
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        header {
+            display: inline-flex;
+            align-content: center;
+            justify-content: space-between;
+            box-sizing: border-box;
+            width: 100vw;
+            height: 64px;
+            display: flex;
+            border: none;
+            border-bottom: solid 1px #dadce0;
+            padding: 0 48px;
+
+        }
+
+        nav {
+            display: inline-flex;
+        }
+
+        main {
+            margin: 32px auto;
+            margin-top: 32px;
+            margin-bottom: 0px;
+            width: calc(100vw - 64px);
+            max-width: 1280px;
+            background: #f6f6f6;
+            height: calc(100vh - 256px);
+        }
+
+        .additem_container {
+            display: grid;
+            align-content: center;
+            margin: 32px auto;
+            margin-top: 32px;
+            margin-bottom: 0px;
+            width: calc(100vw - 64px);
+            max-width: 560px;
+            height: 64px;
+            border-radius: 32px;
+            border: solid 1px #dadce0;
+        }
+
+        .input_container {
+            height: 32px;
+            padding: 0 16px;
+        }
+
+        .button {
+            display: inline-flex;
+            padding: 0;
+            border: none;
+            outline: none;
+            overflow: hidden;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: roboto;
+            align-self: center;
+            background: none;
+            text-decoration: none;
+            box-sizing: border-box;
+        }
+
+        .button_text,
+        .button_icon {
+            display: inline-flex;
+            align-items: center;
+            height: 100%;
+            white-space: nowrap;
+        }
+
+        .button_text {
+            padding-right: 16px;
+            padding-left: 8px;
+        }
+
+        .button_icon {
+            padding-left: 16px;
+            padding-right: 8px;
+        }
+
+        .home_button {
+            height: 48px;
+            font-size: 24px;
+        }
+
+        .home_button .button_text,
+        .button_icon {
+            color: #5f6368;
+        }
+
+        .nav_button {
+            height: 100%;
+            font-size: 16px;
+            text-decoration: none;
+        }
+
+        .nav_button:hover {
+            background: #f6f6f6;
+        }
+
+        .nav_button .button_text {
+            padding: 0 24px;
+            color: #5f6368;
+        }
+
+        .nav_button .button_text:hover {
+            color: #000;
+        }
+
+        .additem_button {
+            align-self: center;
+            height: 32px;
+            float: left;
+            border-radius: 4px;
+        }
+
+        .additem_button:hover {
+            background: #f6f6f6;
+        }
+
+        .additem_button .button_text {
+            font-size: 16px;
+            padding-right: 8px;
+            color: #5f6368;
+        }
+
+        .additem_button .button_icon {
+            padding-left: 8px;
+            padding-right: 0px;
+            color: #5f6368;
+        }
+
+        .additem_button:hover .button_text,
+        .additem_button:hover .button_icon {
+            color: #000;
+        }
+
+        .resizable_text_box {
+            height: 32px;
+            padding: 0 15px 0 10px;
+            overflow: hidden;
+        }
+
+        .resizable_text_box input {
+            height: 32px;
+            width: 100%;
+            border: none;
+            outline: none;
+            caret-color: #3B67BB;
+            font-size: 16px;
+        }
+
+        input:focus::-webkit-input-placeholder {
+            color: #3B67BB;
+        }
+    </style>
 </head>
+
 <body>
-<script src="javascript.js"></script>
+    <header>
+        <a href="#" class="home_button button">
+            <span class="material-icons-outlined button_icon md-36">view_list</span>
+            <span class="button_text">My Shopping List</span>
+        </a>
+        <nav>
+            <a href="signup.html" class="nav_button button"><span class="button_text">Log in/Sign up</span></a>
+            <a href="#" class="nav_button button"><span class="button_text">About</span></a>
+        </nav>
+    </header>
+    <div class="additem_container">
+        <div class="input_container">
+            <button class="additem_button button">
+                <span class="material-icons-outlined button_icon">add</span>
+                <span class="button_text">Add item</span>
+            </button>
+            <div class="resizable_text_box">
+                <input id="question_text_box" name="question[what]" placeholder="Write here..." type="text" />
+            </div>
+        </div>
+    </div>
+    <main>
+    </main>
+    <script src="javascript.js"></script>
 </body>
+
 </html>
