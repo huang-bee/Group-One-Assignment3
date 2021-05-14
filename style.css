@@ -1,0 +1,177 @@
+html,
+body {
+    padding: 0;
+    margin: 0;
+}
+
+header {
+    display: inline-flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    width: 100vw;
+    height: 64px;
+    display: flex;
+    border: none;
+    border-bottom: solid 1px #dadce0;
+    padding: 0 48px;
+
+}
+
+nav {
+    display: inline-flex;
+}
+
+main {
+    margin: 32px auto;
+    margin-top: 32px;
+    margin-bottom: 0px;
+    width: calc(100vw - 64px);
+    max-width: 1280px;
+    background: #f6f6f6;
+    height: calc(100vh - 256px);
+}
+
+.additem_container {
+    display: grid;
+    align-content: center;
+    margin: 32px auto;
+    margin-top: 32px;
+    margin-bottom: 0px;
+    width: calc(100vw - 64px);
+    max-width: 560px;
+    height: 64px;
+    border-radius: 32px;
+    border: solid 1px #dadce0;
+}
+
+.input_container {
+    height: 32px;
+    padding: 0 16px;
+}
+
+.button {
+    display: inline-flex;
+    padding: 0;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: roboto;
+    align-self: center;
+    background: none;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+.button_text,
+.button_icon {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    white-space: nowrap !important;
+}
+
+.button_text {
+    padding-right: 16px;
+    padding-left: 8px;
+}
+
+.button_icon {
+    padding-left: 16px;
+    padding-right: 8px;
+}
+
+.home_button {
+    height: 48px;
+    font-size: 24px;
+}
+
+.home_button .button_text,
+.button_icon {
+    color: #5f6368;
+}
+
+.nav_button {
+    height: 100%;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+.nav_button:hover {
+    background: #f6f6f6;
+}
+
+.nav_button .button_text {
+    padding: 0 24px;
+    color: #5f6368;
+}
+
+.nav_button .button_text:hover {
+    color: #000;
+}
+
+.nav_button_active {
+    margin-bottom: -1px;
+    border-bottom: solid 2px #3B67BB
+}
+
+.nav_button_active:hover {
+    background: rgba(59, 103, 187, .1);
+}
+
+.nav_button_active:hover .button_text {
+    color: #3B67BB;
+}
+
+.nav_button_active .button_text {
+    color: #3B67BB;
+}
+
+.additem_button {
+    align-self: center;
+    height: 32px;
+    float: left;
+    border-radius: 4px;
+}
+
+.additem_button:hover {
+    background: #f6f6f6;
+}
+
+.additem_button .button_text {
+    font-size: 16px;
+    padding-right: 8px;
+    color: #5f6368;
+}
+
+.additem_button .button_icon {
+    padding-left: 8px;
+    padding-right: 0px;
+    color: #5f6368;
+}
+
+.additem_button:hover .button_text,
+.additem_button:hover .button_icon {
+    color: #000;
+}
+
+.resizable_text_box {
+    height: 32px;
+    padding: 0 15px 0 10px;
+    overflow: hidden;
+}
+
+.resizable_text_box input {
+    height: 32px;
+    width: 100%;
+    border: none;
+    outline: none;
+    caret-color: #3B67BB;
+    font-size: 16px;
+}
+
+input:focus::-webkit-input-placeholder {
+    color: #3B67BB;
+}
