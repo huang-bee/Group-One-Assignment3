@@ -27,8 +27,7 @@ main {
     margin-top: 32px;
     margin-bottom: 0px;
     width: calc(100vw - 64px);
-    max-width: 1280px;
-    background: #f6f6f6;
+    max-width: 1920px;
     height: calc(100vh - 256px);
 }
 
@@ -141,7 +140,7 @@ main {
 }
 
 .additem_button .button_text {
-    font-size: 16px;
+    font-size: 14px;
     padding-right: 8px;
     color: #5f6368;
 }
@@ -169,9 +168,135 @@ main {
     border: none;
     outline: none;
     caret-color: #3B67BB;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 input:focus::-webkit-input-placeholder {
     color: #3B67BB;
+}
+
+.inner_nav {
+    height: 32px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.inner_nav .button_text {
+    color: #5f6368;
+}
+
+.filter_wrapper {
+    height: 32px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    display: flex;
+    margin-top: 16px;
+    margin-bottom: 16px;
+}
+
+.dropdown_button {
+    align-self: center;
+    height: 32px;
+    float: left;
+    border-radius: 4px;
+    border: 1px solid #dadce0;
+    border-radius: 16px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.dropdown_button:hover {
+    background: rgba(59, 103, 187, .1);
+}
+
+.dropdown_button .button_text {
+    font-size: 14px;
+    padding-right: 8px;
+    color: #5f6368;
+}
+
+.dropdown_button .button_icon {
+    padding-left: 4px;
+    padding-right: 0px;
+    color: #3B67BB;
+}
+
+.dropdown_button .button_text {
+    padding-right: 4px;
+}
+
+.dropdown_button:hover .button_text,
+.dropdown_button:hover .button_icon {
+    color: #3B67BB;
+}
+
+.checkbox_button {
+    align-self: center;
+    height: 32px;
+    float: left;
+    border-radius: 4px;
+    margin-left: 16px;
+}
+
+.checkbox_button:hover {
+    background: #f6f6f6;
+}
+
+.checkbox_button .button_text {
+    font-size: 14px;
+    padding-right: 8px;
+    color: #5f6368;
+}
+
+.checkbox_button .button_icon {
+    padding-left: 8px;
+    padding-right: 0px;
+    color: #5f6368;
+}
+
+.checkbox_button:hover .button_text,
+.checkbox_button:hover .button_icon {
+    color: #000;
+}
+
+.sort {
+    height: 32px;
+    display: inline-flex;
+    align-content: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    display: flex;
+}
+
+.num_results {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    white-space: nowrap !important;
+    margin: 0 16px;
+    font-family: roboto;
+    font-size: 14px;
+    color: #5f6368;
+}
+
+.product_wrapper {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-basis: 25%;
+}
+.product {
+    height: calc(.25* calc(100vw - 64px));
+    width: calc(.25* calc(100vw - 64px));
+    max-width: 480px;
+    max-height: 480px;
+    border: 1px solid #dadce0;
+    box-sizing: border-box;
+    border-radius: 16px;
+
 }

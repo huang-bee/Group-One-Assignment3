@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>My Shopping list</title>
+</head>
+
+<body>
+    <header>
+        <a href="index.html" class="home_button button">
+            <span class="material-icons-outlined button_icon md-36">view_list</span>
+            <span class="button_text">My Shopping List</span>
+        </a>
+        <nav>
+            <a href="#" class="nav_button nav_button_active button"><span class="button_text">Browse Products</span></a>
+            <a href="index.html" class="nav_button button"><span class="button_text">View Cart</span></a>
+            <a href="#" class="nav_button button"><span class="button_text">About</span></a>
+            <a href="signup.html" class="nav_button button"><span class="button_text">Log in/Sign up</span></a>
+        </nav>
+    </header>
+    <main>
+        <div class="inner_nav">
+            <a href="#" class="button"><span class="button_text">Chocolate:</span></a>
+        </div>
+        <div class="filter_wrapper">
+            <div class="filter">
+                <button class="dropdown_button button">
+                    <span class="button_text">Brands</span>
+                    <span class="material-icons-outlined button_icon">arrow_drop_down</span>
+                </button>
+                <button class="checkbox_button button">
+                    <span class="material-icons-outlined button_icon">check_box_outline_blank</span>
+                    <span class="button_text">On sale</span>
+                </button>
+            </div>
+            <div class="sort">
+                <span class="num_results">Showing 12 results</span>
+                <button class="dropdown_button button">
+                    <span class="button_text">Sort by price</span>
+                    <span class="material-icons-outlined button_icon">arrow_drop_down</span>
+                </button>
+            </div>
+        </div>
+        <div class="product_wrapper">
+            <div class="product"></div>
+            <div class="product"></div>
+            <div class="product"></div>
+            <div class="product"></div>
+            <div class="product"></div>
+            <div class="product"></div>
+        </div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
