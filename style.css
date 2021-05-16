@@ -1,5 +1,5 @@
 html {
-    overflow-x: hidden;
+    overflow-y: overlay;
 }
 
 html,
@@ -104,10 +104,12 @@ main {
     height: 100%;
     font-size: 16px;
     text-decoration: none;
+    margin: 0;
+    line-height: 0;
 }
 
 .nav_button:hover {
-    background: #f6f6f6;
+    background: rgba(0, 0, 0, 0.025);
 }
 
 .nav_button .button_text {
@@ -120,7 +122,7 @@ main {
 }
 
 .nav_button_active {
-    margin-bottom: -1px;
+    margin-bottom: -2px;
     border-bottom: solid 2px #3B67BB
 }
 
@@ -144,7 +146,7 @@ main {
 }
 
 .additem_button:hover {
-    background: #f6f6f6;
+    background: rgba(0, 0, 0, 0.025);
 }
 
 .additem_button .button_text {
@@ -186,13 +188,23 @@ input:focus::-webkit-input-placeholder {
 .inner_nav {
     height: 32px;
     display: inline-flex;
-    align-content: center;
     box-sizing: border-box;
     display: flex;
 }
 
+.inner_nav a {
+    height: 32px;
+}
+
 .inner_nav .button_text {
     color: #5f6368;
+    padding: 0;
+    margin: 0;
+}
+
+.inner_nav_divider {
+    padding: 0;
+    margin: 0 16px;
 }
 
 .filter_wrapper {
@@ -434,9 +446,23 @@ h4 {
     margin-top: 32px;
     height: 32px;
     border-bottom: 1px solid #dadce0;
+    display: inline-flex;
 }
 
 .product_description_ingredients {
+    display: block;
+    margin: 0;
+    padding: 16px;
+}
+
+.product_description_nutritionalInformation {
+    display: none;
+    margin: 0;
+    padding: 16px;
+}
+
+.product_description_allergens {
+    display: none;
     margin: 0;
     padding: 16px;
 }
@@ -447,6 +473,24 @@ p {
     font-family: Roboto;
     font-weight: 500;
     font-size: 14px;
+}
+
+.nutrient_wrapper {
+    display: inline-flex;
+    justify-content: space-between;
+    height: 32px;
+    border-bottom: 1px solid #dadce0;
+    width: 100%;
+    font-family: Roboto;
+    font-size: 14px;
+}
+
+.nutrient_wrapper span {
+    align-self: center;
+}
+
+.nutrient_wrapper_header span {
+    color: #5f6368;
 }
 
 .resize-animation-stopper * {

@@ -43,14 +43,29 @@
                 <h1>Cadbury Dairy Milk Chocolate Block</h1>
                 <h4>180g</h4>
                 <div class="product_description_tabs">
-                    <a href="#" class="nav_button nav_button_active button"><span
-                            class="button_text">Ingredients</span></a>
-                    <a href="#" class="nav_button button"><span class="button_text">Nutritional information</span></a>
-                    <a href="#" class="nav_button button"><span class="button_text">Allergens</span></a>
+                    <button onclick="show_ingredients()" class="nav_button nav_button_active button" id="ingredients_button"><span class="button_text">Ingredients</span></button>
+                    <button onclick="show_nutritionalInformation()" class="nav_button button" id="nutritionalInformation_button"><span class="button_text">Nutritional information</span></button>
+                    <button onclick="show_allergens()" class="nav_button button" id="allergens_button"><span class="button_text">Allergens</span></button>
                 </div>
-                <section class="product_description_ingredients">
+                <section class="product_description_ingredients" id="ingredients">
                     <p>Full Cream Milk, Sugar, Cocoa Butter, Cocoa Mass, Milk Solids, Emulsifiers (Soy Lecithin, 476),
                         Flavours</p>
+                </section>
+                <section class="product_description_nutritionalInformation" id="nutritionalInformation">
+                    <div class="nutritionalInformation_wrapper">
+                        <div class="nutrient_wrapper nutrient_wrapper_header"><span>Nutrient</span><span>per 100g</span></div>
+                        <div class="nutrient_wrapper"><span>Energy</span><span>2250kJ</span></div>
+                        <div class="nutrient_wrapper"><span>Protein</span><span>7.6g</span></div>
+                        <div class="nutrient_wrapper"><span>Fat-Total</span><span>30.4g</span></div>
+                        <div class="nutrient_wrapper"><span>Fat-Saturated</span><span>19.2g</span></div>
+                        <div class="nutrient_wrapper"><span>Carbohydrates</span><span>57.3g</span></div>
+                        <div class="nutrient_wrapper"><span>sugar</span><span>56g</span></div>
+                        <div class="nutrient_wrapper"><span>Sodium</span><span>82mg</span></div>
+                    </div>
+                </section>
+                <section class="product_description_allergens" id="allergens">
+                    <p>Contains Milk and Soy</p>
+                    <p>May contain traces of Wheat, Peanuts and Tree Nuts</p>
                 </section>
                 <div class="addtocart_wrapper">
                     <div class="price">

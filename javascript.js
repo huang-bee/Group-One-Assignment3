@@ -1,3 +1,34 @@
+
+function show_ingredients() {
+  document.getElementById('ingredients').style.display = 'block';
+  document.getElementById('nutritionalInformation').style.display = 'none';
+  document.getElementById('allergens').style.display = 'none';
+
+  document.getElementById('ingredients_button').classList.add("nav_button_active");
+  document.getElementById('nutritionalInformation_button').classList.remove("nav_button_active");
+  document.getElementById('allergens_button').classList.remove("nav_button_active");
+}
+
+function show_nutritionalInformation() {
+  document.getElementById('ingredients').style.display = 'none';
+  document.getElementById('nutritionalInformation').style.display = 'block';
+  document.getElementById('allergens').style.display = 'none';
+
+  document.getElementById('ingredients_button').classList.remove("nav_button_active");
+  document.getElementById('nutritionalInformation_button').classList.add("nav_button_active");
+  document.getElementById('allergens_button').classList.remove("nav_button_active");
+}
+
+function show_allergens() {
+  document.getElementById('ingredients').style.display = 'none';
+  document.getElementById('nutritionalInformation').style.display = 'none';
+  document.getElementById('allergens').style.display = 'block';
+
+  document.getElementById('ingredients_button').classList.remove("nav_button_active");
+  document.getElementById('nutritionalInformation_button').classList.remove("nav_button_active");
+  document.getElementById('allergens_button').classList.add("nav_button_active");
+}
+
 let resizeTimer;
 window.addEventListener("resize", () => {
   document.body.classList.add("resize-animation-stopper");
