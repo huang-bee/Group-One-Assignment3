@@ -260,27 +260,21 @@ input:focus::-webkit-input-placeholder {
     float: left;
     border-radius: 4px;
     margin-left: 16px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    padding: 0;
 }
 
-.checkbox_button:hover {
-    background: #f6f6f6;
-}
 
-.checkbox_button .button_text {
-    font-size: 14px;
-    padding-right: 8px;
-    color: #5f6368;
-}
-
-.checkbox_button .button_icon {
-    padding-left: 8px;
-    padding-right: 0px;
-    color: #5f6368;
-}
-
-.checkbox_button:hover .button_text,
-.checkbox_button:hover .button_icon {
-    color: #000;
+.mdc-checkbox__checkmark {
+    box-sizing: border-box;
+    background: #3B67BB;
+    border: #3B67BB 2px solid;
+    border-radius: 2px;
+    box-sizing: content-box;
+    margin: -2px;
 }
 
 .sort {
@@ -312,6 +306,7 @@ input:focus::-webkit-input-placeholder {
 }
 
 .product {
+    display: flex;
     height: calc(.25* calc(100vw - 112px));
     width: calc(.25* calc(100vw - 112px));
     max-width: 468px;
@@ -320,7 +315,6 @@ input:focus::-webkit-input-placeholder {
     box-sizing: border-box;
     border-radius: 16px;
     padding: 16px;
-    display: flex;
     flex-direction: column;
     text-decoration: none;
     transition: all .18s ease;
@@ -491,6 +485,39 @@ p {
 
 .nutrient_wrapper_header span {
     color: #5f6368;
+}
+
+input[type=checkbox] {
+    display: none;
+}
+
+label {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 25px;
+  position:relative;
+}
+
+input[type=checkbox] + label:after {
+    font-family: 'Material Icons';
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    left: 0;
+    border: 2px solid #757575;
+    border-radius: 2px;
+}
+
+input[type=checkbox]:checked + label:after {
+    content: "\E5CA";
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    line-height: 16px;
+    background: #ff5d02;
+    border-color: #ff5d02;
 }
 
 .resize-animation-stopper * {

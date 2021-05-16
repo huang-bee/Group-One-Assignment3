@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
@@ -36,10 +37,23 @@
                     <span class="button_text">Brands</span>
                     <span class="material-icons-outlined button_icon">arrow_drop_down</span>
                 </button>
-                <button class="checkbox_button button">
-                    <span class="material-icons-outlined button_icon">check_box_outline_blank</span>
-                    <span class="button_text">On sale</span>
-                </button>
+                <label for="checkbox-1" class="mdc-form-field checkbox_button">
+                    <div class="mdc-checkbox">
+                      <input onclick="validate()" type="checkbox"
+                             class="mdc-checkbox__native-control"
+                             id="checkbox-1"/>
+                      <div class="mdc-checkbox__background">
+                        <svg class="mdc-checkbox__checkmark"
+                             viewBox="0 0 24 24">
+                          <path class="mdc-checkbox__checkmark-path"
+                                fill="none"
+                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
+                        </svg>
+                        <div class="mdc-checkbox__mixedmark"></div>
+                      </div>
+                      <div class="mdc-checkbox__ripple"></div>
+                    </div>
+                    On sale</label>
             </div>
             <div class="sort">
                 <span class="num_results">Showing 12 results</span>
@@ -51,7 +65,35 @@
         </div>
         <div class="product_wrapper">
             <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+                <h1>Cadbury Dairy Milk Chocolate Block 1 Sale</h1>
+                <h4>180g</h4>
+                <div class="addtocart_wrapper">
+                    <div class="price">
+                        <h1>$3.59</h1>
+                        <h4>ea</h4>
+                    </div>
+                    <button class="addtocart_button button">
+                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                        <span class="button_text">Add to cart</span>
+                    </button>
+                </div>
+            </a>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 2</h1>
+                <h4>180g</h4>
+                <div class="addtocart_wrapper">
+                    <div class="price">
+                        <h1>$3.59</h1>
+                        <h4>ea</h4>
+                    </div>
+                    <button class="addtocart_button button">
+                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                        <span class="button_text">Add to cart</span>
+                    </button>
+                </div>
+            </a>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 3</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -65,7 +107,21 @@
                 </div>
             </a>
             <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+                <h1>Cadbury Dairy Milk Chocolate Block 4 Sale</h1>
+                <h4>180g</h4>
+                <div class="addtocart_wrapper">
+                    <div class="price">
+                        <h1>$3.59</h1>
+                        <h4>ea</h4>
+                    </div>
+                    <button class="addtocart_button button">
+                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                        <span class="button_text">Add to cart</span>
+                    </button>
+                </div>
+            </a>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 5</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -79,7 +135,7 @@
                 </div>
             </a>
             <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+                <h1>Cadbury Dairy Milk Chocolate Block 6 Sale</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -93,7 +149,7 @@
                 </div>
             </a>
             <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+                <h1>Cadbury Dairy Milk Chocolate Block 7 Sale</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -107,7 +163,7 @@
                 </div>
             </a>
             <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+                <h1>Cadbury Dairy Milk Chocolate Block 8 Sale</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -120,8 +176,8 @@
                     </button>
                 </div>
             </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 9</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -134,8 +190,8 @@
                     </button>
                 </div>
             </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 10</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -148,8 +204,8 @@
                     </button>
                 </div>
             </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 11</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -162,8 +218,8 @@
                     </button>
                 </div>
             </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 12</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
@@ -176,50 +232,8 @@
                     </button>
                 </div>
             </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
-                <h4>180g</h4>
-                <div class="addtocart_wrapper">
-                    <div class="price">
-                        <h1>$3.59</h1>
-                        <h4>ea</h4>
-                    </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
-                </div>
-            </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
-                <h4>180g</h4>
-                <div class="addtocart_wrapper">
-                    <div class="price">
-                        <h1>$3.59</h1>
-                        <h4>ea</h4>
-                    </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
-                </div>
-            </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
-                <h4>180g</h4>
-                <div class="addtocart_wrapper">
-                    <div class="price">
-                        <h1>$3.59</h1>
-                        <h4>ea</h4>
-                    </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
-                </div>
-            </a>
-            <a href="product_details.html" class="product">
-                <h1>Cadbury Dairy Milk Chocolate Block</h1>
+            <a href="product_details.html" class="product notonsale">
+                <h1>Cadbury Dairy Milk Chocolate Block 13 Sale</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">

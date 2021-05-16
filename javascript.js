@@ -1,3 +1,22 @@
+function validate() {
+
+  var x = document.getElementsByClassName('notonsale');
+
+  x = Array.prototype.slice.call(x);
+
+  if (document.getElementById('checkbox-1').checked) {
+
+    x.forEach( function(element){
+      element.style.display = 'none'; 
+  });
+
+  } else {
+    x.forEach( function(element){
+      element.style.display = 'flex'; 
+  });
+  }
+}
+
 
 function show_ingredients() {
   document.getElementById('ingredients').style.display = 'block';
