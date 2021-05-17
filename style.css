@@ -229,6 +229,10 @@ input:focus::-webkit-input-placeholder {
     padding-right: 8px;
 }
 
+.dropdown_button span {
+    pointer-events: none;
+}
+
 .dropdown_button:hover {
     background: rgba(59, 103, 187, .1);
 }
@@ -253,6 +257,35 @@ input:focus::-webkit-input-placeholder {
 .dropdown_button:hover .button_icon {
     color: #3B67BB;
 }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    margin-top: 40px;
+    background-color: #fff;
+    min-width: 80px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+    z-index: 1;
+    border-radius: 4px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 0 12px;
+    height: 32px;
+    text-decoration: none;
+    display: flex;
+    align-content: center;
+    align-items: center !important;
+    white-space: nowrap !important;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 14px;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd}
+  
+  .show {display:block;}
 
 .checkbox_button {
     align-self: center;
@@ -313,7 +346,7 @@ input:focus::-webkit-input-placeholder {
     max-height: 468px;
     border: 1px solid #dadce0;
     box-sizing: border-box;
-    border-radius: 16px;
+    border-radius: 8px;
     padding: 16px;
     flex-direction: column;
     text-decoration: none;

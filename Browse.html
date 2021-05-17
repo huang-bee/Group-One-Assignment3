@@ -57,10 +57,18 @@
             </div>
             <div class="sort">
                 <span class="num_results">Showing 12 results</span>
-                <button class="dropdown_button button">
-                    <span class="button_text">Sort by price</span>
-                    <span class="material-icons-outlined button_icon">arrow_drop_down</span>
-                </button>
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn dropdown_button button">
+                        <span onclick="myFunction()" class="button_text">Sort by: Lowest price</span>
+                        <span onclick="myFunction()" class="material-icons-outlined button_icon">arrow_drop_down</span>
+                    </button>
+                    <div id="myDropdown" class="dropdown-content">
+                    <a href="#">Lowest Price</a>
+                    <a href="#">Highest Price</a>
+                    <a href="#">Price per 100g</a>
+                    <a href="#">Weight</a>
+                    </div>
+                  </div>
             </div>
         </div>
         <div class="product_wrapper">
