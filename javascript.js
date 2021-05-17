@@ -1,3 +1,18 @@
+//variables
+const addItemInput = document.querySelector('input.question_text_box');
+const addItemButton = document.querySelector('button.additem_button_button');
+
+//adding items
+addItemButton.addEventListener('click', () =>{
+  let ul = document.getElementsByTagName('ul')[0];
+  let li = document.createElement('li');
+  li.textContent=addItemInput.value;
+  ul.appendChild(li);
+  addItemInput.value='';
+});
+
+
+
 function validate() {
 
   var x = document.getElementsByClassName('notonsale');
@@ -36,8 +51,6 @@ window.onclick = function(event) {
     }
   }
 }
-
-
 
 
 function show_ingredients() {
