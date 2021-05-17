@@ -258,6 +258,15 @@ input:focus::-webkit-input-placeholder {
     color: #3B67BB;
 }
 
+.dropdown_button_active {
+    background: rgba(59, 103, 187, .1);
+}
+
+.dropdown_button_active .button_text,
+.dropdown_button_active .button_icon {
+    color: #3B67BB;
+}
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -267,6 +276,7 @@ input:focus::-webkit-input-placeholder {
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
     z-index: 1;
     border-radius: 4px;
+    padding: 8px 0;
   }
   
   .dropdown-content a {

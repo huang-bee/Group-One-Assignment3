@@ -15,6 +15,7 @@
 </head>
 
 <body>
+    <script type="text/javascript" src="javascript.js"></script>
     <header>
         <a href="index.html" class="home_button button">
             <span class="material-icons-outlined button_icon md-36">view_list</span>
@@ -58,9 +59,9 @@
             <div class="sort">
                 <span class="num_results">Showing 12 results</span>
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn dropdown_button button">
-                        <span onclick="myFunction()" class="button_text">Sort by: Lowest price</span>
-                        <span onclick="myFunction()" class="material-icons-outlined button_icon">arrow_drop_down</span>
+                    <button onclick="myFunction()" class="dropbtn dropdown_button button" id="myDropdown_button">
+                        <span class="button_text">Sort by: Lowest price</span>
+                        <span id="dropdown_arrow" class="material-icons-outlined button_icon">arrow_drop_down</span>
                     </button>
                     <div id="myDropdown" class="dropdown-content">
                     <a href="#">Lowest Price</a>
@@ -256,7 +257,7 @@
             </a>
         </div>
     </main>
-    <script src="javascript.js"></script>
+
 </body>
 
 </html>

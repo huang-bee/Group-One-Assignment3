@@ -1,3 +1,44 @@
+let resizeTimer;
+window.addEventListener("resize", () => {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(() => {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});
+
+/* When the user clicks on the button,
+toggle between hiding and showing the dropdown content */
+function myFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+  document.getElementById("myDropdown_button").classList.toggle("dropdown_button_active");
+
+  var x = document.getElementById("dropdown_arrow");
+  if (x.innerHTML === "arrow_drop_down") {
+    x.innerHTML = "arrow_drop_up";
+  } else {
+    x.innerHTML = "arrow_drop_down";
+  }
+
+}
+
+// Close the dropdown menu if the user clicks outside of it
+window.onclick = function(event) {
+  if (!event.target.matches('.dropdown_button')) {
+    var dropdowns = document.getElementsByClassName("dropdown-content");
+    var i;
+    for (i = 0; i < dropdowns.length; i++) {
+      var openDropdown = dropdowns[i];
+      if (openDropdown.classList.contains('show')) {
+        openDropdown.classList.remove('show');
+        document.getElementById("myDropdown_button").classList.remove("dropdown_button_active");
+        document.getElementById("dropdown_arrow").innerHTML = ('arrow_drop_down');
+      }
+    }
+  }
+}
+
+
 //variables
 const addItemInput = document.querySelector('input.question_text_box');
 const addItemButton = document.querySelector('button.additem_button_button');
@@ -13,6 +54,7 @@ listUl.addEventListener('click', (event) => {
       }
     }
  });
+
 
 //adding remove button
 function removeButton (li) {
@@ -57,25 +99,7 @@ function validate() {
   }
 }
 
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
-function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-}
 
-// Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropbtn')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-      }
-    }
-  }
-}
 
 
 function show_ingredients() {
@@ -108,11 +132,3 @@ function show_allergens() {
   document.getElementById('allergens_button').classList.add("nav_button_active");
 }
 
-let resizeTimer;
-window.addEventListener("resize", () => {
-  document.body.classList.add("resize-animation-stopper");
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
-  }, 400);
-});
