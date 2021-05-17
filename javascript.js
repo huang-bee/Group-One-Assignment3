@@ -1,6 +1,26 @@
 //variables
 const addItemInput = document.querySelector('input.question_text_box');
 const addItemButton = document.querySelector('button.additem_button_button');
+const listUl = document.querySelector('ul')
+
+//remove items
+listUl.addEventListener('click', (event) => {
+  if (event.target.tagName == 'BUTTON') {
+      if(event.target.className == "remove") {
+      let li = event.target.parentNode;
+      let ul = li.parentNode;
+      ul.removeChild(li);
+      }
+    }
+ });
+
+//adding remove button
+function removeButton (li) {
+  let remove = document.createElement('button');
+  remove.className = 'remove';
+  remove.textContent = 'Remove Item';
+  li.appendChild(remove);
+}
 
 //adding items
 addItemButton.addEventListener('click', () =>{
@@ -11,11 +31,11 @@ addItemButton.addEventListener('click', () =>{
   let words = addItemInput.value.length;
   ul.appendChild(li);
   if (words > 0) {
+    removeButton(li);
     li.appendChild(line);
     }
   addItemInput.value='';
 });
-
 
 
 function validate() {

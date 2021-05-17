@@ -560,6 +560,10 @@ input[type=checkbox]:checked + label:after {
 
 li {
     list-style-type: none;
-    font-size: 50px;
+    font-size: 35px;
+    max-width: 90%;
 }
 
+.remove {
+    margin-left: 20px;
+}
