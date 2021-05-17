@@ -6,8 +6,13 @@ const addItemButton = document.querySelector('button.additem_button_button');
 addItemButton.addEventListener('click', () =>{
   let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
+  let line = document.createElement('hr');
   li.textContent=addItemInput.value;
+  let words = addItemInput.value.length;
   ul.appendChild(li);
+  if (words > 0) {
+    li.appendChild(line);
+    }
   addItemInput.value='';
 });
 

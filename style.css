@@ -557,3 +557,9 @@ input[type=checkbox]:checked + label:after {
     animation: none !important;
     transition: none !important;
 }
+
+li {
+    list-style-type: none;
+    font-size: 50px;
+}
+
