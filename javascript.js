@@ -39,6 +39,16 @@ window.onclick = function(event) {
 }
 
 
+// const activeButton = document.getElementById('myDropdown_button');
+// const activeText = document.getElementsByTagName('span.button_text');
+// console.log(activeText);
+
+
+// activeButton.addEventListener ('click', () => {
+//   activeText.textContent ='Highest Price';
+// });
+
+
 //variables
 const addItemInput = document.querySelector('input.question_text_box');
 const addItemButton = document.querySelector('button.additem_button_button');

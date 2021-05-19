@@ -139,7 +139,7 @@ main {
 }
 
 .additem_button {
-    align-self: center;
+    align-self: center; 
     height: 32px;
     float: left;
     border-radius: 4px;
