@@ -10,7 +10,7 @@
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    <title>Login/Signup</title>
+    <title>Create Account</title>
 </head>
 
 <body>
@@ -31,18 +31,29 @@
     <main>
         <div class="inner_nav">
             <a href="#" class="button"><span class="button_text">Log in/Sign up</span></a>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <a href="#" class="button"><span class="button_text">Create account</span></a>
         </div>
-        <div>
-            <a href="create_account.html">
-                <button class="signin_button button">
-                    <span class="button_text">I am a new user</span>
-                </button>
-            <a herf="login.html"></a>
-                <button class="signin_button button">
-                    <span class="button_text">I have an existing account</span>
-                </button>
-            
-        </div>
+
+        
+  <form>
+
+    <div class="container">
+      <input type="text" placeholder="Email or phone number" name="uname" required>
+
+      <input type="password" placeholder="Password" name="psw" required>
+
+      <input type="password" placeholder="Confirm password" name="cfmpsw" required>
+        
+      <button type="submit">Create account</button>
+    </div>
+
+  </form>
+</div>
+
+
+
+
     </main>
     <script src="javascript.js"></script>
 </body>

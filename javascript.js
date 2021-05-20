@@ -144,3 +144,12 @@ function show_allergens() {
   document.getElementById('allergens_button').classList.add("nav_button_active");
 }
 
+// Get the modal
+var modal = document.getElementById('id01');
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+}
