@@ -7,6 +7,15 @@ window.addEventListener("resize", () => {
   }, 400);
 });
 
+function replaceText(e) {
+  if (document.querySelector('#myDropdown button.active') !== null) {
+    document.querySelector('#myDropdown button.active').classList.remove('active');
+  }
+  e.target.className = "active";
+  document.querySelector('#dropdown_text').innerHTML = 'Sort by: ' + e.target.innerHTML;
+}
+
+
 /* When the user clicks on the button,
 toggle between hiding and showing the dropdown content */
 function myFunction() {
@@ -49,12 +58,14 @@ window.onclick = function(event) {
 // });
 
 
+
 //variables
 const addItemInput = document.querySelector('input.question_text_box');
 const addItemButton = document.querySelector('button.additem_button_button');
 const listUl = document.querySelector('ul')
 
 //remove items
+if(listUl){
 listUl.addEventListener('click', (event) => {
   if (event.target.tagName == 'BUTTON') {
       if(event.target.className == "remove") {
@@ -64,6 +75,7 @@ listUl.addEventListener('click', (event) => {
       }
     }
  });
+}
 
 
 //adding remove button
@@ -75,6 +87,7 @@ function removeButton (li) {
 }
 
 //adding items
+if(addItemButton){
 addItemButton.addEventListener('click', () =>{
   let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
@@ -88,6 +101,7 @@ addItemButton.addEventListener('click', () =>{
     }
   addItemInput.value='';
 });
+}
 
 
 function validate() {

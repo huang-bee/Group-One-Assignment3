@@ -40,36 +40,34 @@
                 </button>
                 <label for="checkbox-1" class="mdc-form-field checkbox_button">
                     <div class="mdc-checkbox">
-                      <input onclick="validate()" type="checkbox"
-                             class="mdc-checkbox__native-control"
-                             id="checkbox-1"/>
-                      <div class="mdc-checkbox__background">
-                        <svg class="mdc-checkbox__checkmark"
-                             viewBox="0 0 24 24">
-                          <path class="mdc-checkbox__checkmark-path"
-                                fill="none"
-                                d="M1.73,12.91 8.1,19.28 22.79,4.59"/>
-                        </svg>
-                        <div class="mdc-checkbox__mixedmark"></div>
-                      </div>
-                      <div class="mdc-checkbox__ripple"></div>
+                        <input onclick="validate()" type="checkbox" class="mdc-checkbox__native-control"
+                            id="checkbox-1" />
+                        <div class="mdc-checkbox__background">
+                            <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                <path class="mdc-checkbox__checkmark-path" fill="none"
+                                    d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                            </svg>
+                            <div class="mdc-checkbox__mixedmark"></div>
+                        </div>
+                        <div class="mdc-checkbox__ripple"></div>
                     </div>
-                    On sale</label>
+                    On sale
+                </label>
             </div>
             <div class="sort">
                 <span class="num_results">Showing 12 results</span>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn dropdown_button button" id="myDropdown_button">
-                        <span class="button_text">Sort by: Lowest price</span>
+                        <span id="dropdown_text" class="button_text">Sort by: Lowest price</span>
                         <span id="dropdown_arrow" class="material-icons-outlined button_icon">arrow_drop_down</span>
                     </button>
-                    <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Lowest Price</a>
-                    <a href="#">Highest Price</a>
-                    <a href="#">Price per 100g</a>
-                    <a href="#">Weight</a>
+                    <div onclick="replaceText(event)" id="myDropdown" class="dropdown-content">
+                        <button class="active">Lowest price</button>
+                        <button>Highest price</button>
+                        <button>Price per 100g</button>
+                        <button>Weight</button>
                     </div>
-                  </div>
+                </div>
             </div>
         </div>
         <div class="product_wrapper">
@@ -257,7 +255,6 @@
             </a>
         </div>
     </main>
-
 </body>
 
 </html>

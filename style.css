@@ -279,8 +279,8 @@ input:focus::-webkit-input-placeholder {
     padding: 8px 0;
   }
   
-  .dropdown-content a {
-    color: black;
+  .dropdown-content button {
+    color: #5f6368;
     padding: 0 12px;
     height: 32px;
     text-decoration: none;
@@ -291,11 +291,28 @@ input:focus::-webkit-input-placeholder {
     font-family: Roboto;
     font-weight: 500;
     font-size: 14px;
+    background: none;
+    border: none;
+    width: 100%;
+    cursor: pointer;
   }
   
-  .dropdown-content a:hover {background-color: #ddd}
+  .dropdown-content button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+    color: #000;
+    }
   
-  .show {display:block;}
+  .show {
+    display:block;
+    }
+
+
+  
+  button.active, button.active:hover {
+    background-color: rgba(59, 103, 187, .1);
+    color: #000;
+  }
+
 
 .checkbox_button {
     align-self: center;
