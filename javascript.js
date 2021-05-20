@@ -47,18 +47,6 @@ window.onclick = function(event) {
   }
 }
 
-
-// const activeButton = document.getElementById('myDropdown_button');
-// const activeText = document.getElementsByTagName('span.button_text');
-// console.log(activeText);
-
-
-// activeButton.addEventListener ('click', () => {
-//   activeText.textContent ='Highest Price';
-// });
-
-
-
 //variables
 const addItemInput = document.querySelector('input.question_text_box');
 const addItemButton = document.querySelector('button.additem_button_button');
@@ -92,7 +80,7 @@ addItemButton.addEventListener('click', () =>{
   let ul = document.getElementsByTagName('ul')[0];
   let li = document.createElement('li');
   let line = document.createElement('hr');
-  li.textContent=addItemInput.value;
+  li.textContent=addItemInput.value.toLowerCase();
   let words = addItemInput.value.length;
   ul.appendChild(li);
   if (words > 0) {
