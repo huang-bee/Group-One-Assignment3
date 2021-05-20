@@ -362,7 +362,6 @@ input:focus::-webkit-input-placeholder {
     flex-direction: row;
     flex-wrap: wrap;
     gap: 16px;
-
 }
 
 .product {
@@ -383,6 +382,66 @@ input:focus::-webkit-input-placeholder {
 .product:hover {
     transform: translate(0, -1px);
     box-shadow: rgba(0, 0, 0, 0.1) 0px 2px 5px;
+}
+
+#cadbury {
+    background-image: url(images/chocolate/Favourites.jpg);
+    background-size: cover;
+}
+
+#snickers {
+    background-image: url(images/chocolate/Snickers.jpg);
+    background-size: cover;
+}
+
+#whittakers {
+    background-image: url(images/chocolate/Whittakers.jpg);
+    background-size: cover;
+}
+
+#caramilk {
+    background-image: url(images/chocolate/Caramilk.jpg);
+    background-size: cover;
+}
+
+#ferrero {
+    background-image: url(images/chocolate/Ferrero.jpg);
+    background-size: cover;
+}
+
+#slab {
+    background-image: url(images/chocolate/Slab.jpg);
+    background-size: cover;
+}
+
+#roses {
+    background-image: url(images/chocolate/Roses.jpg);
+    background-size: cover;
+}
+
+#almond {
+    background-image: url(images/chocolate/Almond.jpg);
+    background-size: cover;
+}
+
+#hotchocolate {
+    background-image: url(images/chocolate/Hotchocolate.jpg);
+    background-size: cover;
+}
+
+#lindt {
+    background-image: url(images/chocolate/Lindt.jpg);
+    background-size: cover;
+}
+
+#mm {
+    background-image: url(images/chocolate/Mm.jpg);
+    background-size: cover;
+}
+
+#milk {
+    background-image: url(images/chocolate/Milk.jpg);
+    background-size: cover;
 }
 
 h1 {
