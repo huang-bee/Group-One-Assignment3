@@ -533,6 +533,11 @@ input:focus::-webkit-input-placeholder {
     background-size: cover;
 }
 
+#tiptopwhite {
+    background-image: url(images/bread/Tiptop.jpg);
+    background-size: cover;
+}
+
 h1 {
     margin: 0;
     padding: 0;

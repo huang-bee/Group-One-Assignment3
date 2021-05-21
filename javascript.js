@@ -132,9 +132,15 @@ function addElement() {
 function display() {
   document.querySelector(".list_item_wrapper").innerHTML = "";
   for (var i = 0; i < elements.length; i++)
-    document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del("+ i +")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] +"</span><a href = 'browse.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a></li>";
+    document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del("+ i +")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] + "<a href = 'browse.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a></span></span></li>";
+    console.log(document.querySelector(".question_text_box").value);
+    // if (document.querySelector(".question_text_box").value == "chocolate") {
+    //   document.querySelector(".list_item_wrapper").innerHTML += "<a href = 'browse.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a>";
+    // } else if (document.querySelector(".question_text_box").value == "bread") {
+    //   document.querySelector(".list_item_wrapper").innerHTML += "<a href = 'bread.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a>";
+    // }
     document.querySelector(".question_text_box").value = "";
-}
+  }
 function del(index) {
   elements.splice(index, 1);
   if (localStorage.getItem("elements") == null) {
