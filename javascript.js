@@ -1,147 +1,148 @@
-let resizeTimer;
-window.addEventListener("resize", () => {
-  document.body.classList.add("resize-animation-stopper");
-  clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(() => {
-    document.body.classList.remove("resize-animation-stopper");
-  }, 400);
-});
-
-function replaceText(e) {
-  if (document.querySelector('#myDropdown button.active') !== null) {
-    document.querySelector('#myDropdown button.active').classList.remove('active');
-  }
-  e.target.className = "active";
-  document.querySelector('#dropdown_text').innerHTML = 'Sort by: ' + e.target.innerHTML;
-}
-
-
-/* When the user clicks on the button,
-toggle between hiding and showing the dropdown content */
+// When the user clicks on the button, toggle between hiding and showing the dropdown content
 function myFunction() {
-  document.getElementById("myDropdown").classList.toggle("show");
-  document.getElementById("myDropdown_button").classList.toggle("dropdown_button_active");
-
+  const dropdown = document.getElementById("myDropdown");
+  const dropdown_button = document.getElementById("myDropdown_button");
   var x = document.getElementById("dropdown_arrow");
+
+  dropdown.classList.toggle("show");
+  dropdown_button.classList.toggle("dropdown_button_active");
+
   if (x.innerHTML === "arrow_drop_down") {
     x.innerHTML = "arrow_drop_up";
   } else {
     x.innerHTML = "arrow_drop_down";
   }
-
 }
+
 
 // Close the dropdown menu if the user clicks outside of it
-window.onclick = function(event) {
-  if (!event.target.matches('.dropdown_button')) {
-    var dropdowns = document.getElementsByClassName("dropdown-content");
-    var i;
-    for (i = 0; i < dropdowns.length; i++) {
-      var openDropdown = dropdowns[i];
-      if (openDropdown.classList.contains('show')) {
-        openDropdown.classList.remove('show');
-        document.getElementById("myDropdown_button").classList.remove("dropdown_button_active");
-        document.getElementById("dropdown_arrow").innerHTML = ('arrow_drop_down');
+window.addEventListener("click", function(event) {
+  const dropdown_button = document.getElementById("myDropdown_button");
+  const dropdown_arrow = document.getElementById("dropdown_arrow");
+
+  var dropdown = document.getElementById("myDropdown");
+  var i;
+
+  if (!event.target.matches(".dropdown_button")) {
+      if (dropdown.classList.contains("show")) {
+        dropdown.classList.remove("show");
+        dropdown_button.classList.remove("dropdown_button_active");
+        dropdown_arrow.innerHTML = ("arrow_drop_down");
       }
-    }
   }
-}
-
-//variables
-const addItemInput = document.querySelector('input.question_text_box');
-const addItemButton = document.querySelector('button.additem_button_button');
-const listUl = document.querySelector('ul')
-
-//remove items
-if(listUl){
-listUl.addEventListener('click', (event) => {
-  if (event.target.tagName == 'BUTTON') {
-      if(event.target.className == "remove") {
-      let li = event.target.parentNode;
-      let ul = li.parentNode;
-      ul.removeChild(li);
-      }
-    }
- });
-}
-
-
-//adding remove button
-function removeButton (li) {
-  let remove = document.createElement('button');
-  remove.className = 'remove';
-  remove.textContent = 'Remove Item';
-  li.appendChild(remove);
-}
-
-//adding items
-if(addItemButton){
-addItemButton.addEventListener('click', () =>{
-  let ul = document.getElementsByTagName('ul')[0];
-  let li = document.createElement('li');
-  let line = document.createElement('hr');
-  li.textContent=addItemInput.value.toLowerCase();
-  let words = addItemInput.value.length;
-  ul.appendChild(li);
-  if (words > 0) {
-    removeButton(li);
-    li.appendChild(line);
-    }
-  addItemInput.value='';
 });
-}
 
+
+//prevents transition effects from playing while the window is being resized
+var resizeTimer;
+window.addEventListener("resize", function() {
+  document.body.classList.add("resize-animation-stopper");
+  clearTimeout(resizeTimer);
+  resizeTimer = setTimeout(function() {
+    document.body.classList.remove("resize-animation-stopper");
+  }, 400);
+});
+
+// Switches button text on the dropdown button based on selection
+function replaceText(e) {
+  const active_button = document.querySelector("#myDropdown button.active");
+  const dropdown_text = document.querySelector("#dropdown_text");
+  if (active_button !== null) {
+    active_button.classList.remove("active");
+  }
+  e.target.className = "active";
+  dropdown_text.innerHTML = "Sort by: " + e.target.innerHTML;
+}
 
 function validate() {
 
-  var x = document.getElementsByClassName('notonsale');
+  var x = document.getElementsByClassName("notonsale");
 
   x = Array.prototype.slice.call(x);
 
-  if (document.getElementById('checkbox-1').checked) {
+  if (document.getElementById("checkbox-1").checked) {
 
     x.forEach( function(element){
-      element.style.display = 'none'; 
+      element.style.display = "none";
   });
 
   } else {
     x.forEach( function(element){
-      element.style.display = 'flex'; 
+      element.style.display = "flex";
   });
   }
 }
 
-
-
-
 function show_ingredients() {
-  document.getElementById('ingredients').style.display = 'block';
-  document.getElementById('nutritionalInformation').style.display = 'none';
-  document.getElementById('allergens').style.display = 'none';
+  document.getElementById("ingredients").style.display = "block";
+  document.getElementById("nutritionalInformation").style.display = "none";
+  document.getElementById("allergens").style.display = "none";
 
-  document.getElementById('ingredients_button').classList.add("nav_button_active");
-  document.getElementById('nutritionalInformation_button').classList.remove("nav_button_active");
-  document.getElementById('allergens_button').classList.remove("nav_button_active");
+  document.getElementById("ingredients_button").classList.add("nav_button_active");
+  document.getElementById("nutritionalInformation_button").classList.remove("nav_button_active");
+  document.getElementById("allergens_button").classList.remove("nav_button_active");
 }
 
 function show_nutritionalInformation() {
-  document.getElementById('ingredients').style.display = 'none';
-  document.getElementById('nutritionalInformation').style.display = 'block';
-  document.getElementById('allergens').style.display = 'none';
+  document.getElementById("ingredients").style.display = "none";
+  document.getElementById("nutritionalInformation").style.display = 'block';
+  document.getElementById("allergens").style.display = "none";
 
-  document.getElementById('ingredients_button').classList.remove("nav_button_active");
-  document.getElementById('nutritionalInformation_button').classList.add("nav_button_active");
-  document.getElementById('allergens_button').classList.remove("nav_button_active");
+  document.getElementById("ingredients_button").classList.remove("nav_button_active");
+  document.getElementById("nutritionalInformation_button").classList.add("nav_button_active");
+  document.getElementById("allergens_button").classList.remove("nav_button_active");
 }
 
 function show_allergens() {
-  document.getElementById('ingredients').style.display = 'none';
-  document.getElementById('nutritionalInformation').style.display = 'none';
-  document.getElementById('allergens').style.display = 'block';
+  document.getElementById("ingredients").style.display = "none";
+  document.getElementById("nutritionalInformation").style.display = "none";
+  document.getElementById("allergens").style.display = "block";
 
-  document.getElementById('ingredients_button').classList.remove("nav_button_active");
-  document.getElementById('nutritionalInformation_button').classList.remove("nav_button_active");
-  document.getElementById('allergens_button').classList.add("nav_button_active");
+  document.getElementById("ingredients_button").classList.remove("nav_button_active");
+  document.getElementById("nutritionalInformation_button").classList.remove("nav_button_active");
+  document.getElementById("allergens_button").classList.add("nav_button_active");
+}
+
+var input = document.getElementById("myInput");
+
+input.addEventListener("keyup", function(event) {
+  if (event.keyCode === 13) {
+  addElement();
+  }
+});
+
+var elements = [];
+window.onload = function() {
+  if (JSON.parse(localStorage.getItem("elements")) != null)
+    elements = JSON.parse(localStorage.getItem("elements"));
+  console.log(elements);
+  display();
+};
+function addElement() {
+  if (document.querySelector(".question_text_box").value.trim() != "") {
+    elements.push(document.querySelector(".question_text_box").value.trim());
+    if (localStorage.getItem("elements") == null) {
+      localStorage.setItem("elements", JSON.stringify(elements));
+    } else {
+      localStorage.setItem("elements", JSON.stringify(elements));
+    }
+    display();
+  }
+}
+function display() {
+  document.querySelector(".list_item_wrapper").innerHTML = "";
+  for (var i = 0; i < elements.length; i++)
+    document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del("+ i +")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] +"</span><a href = 'browse.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a></li>";
+    document.querySelector(".question_text_box").value = "";
+}
+function del(index) {
+  elements.splice(index, 1);
+  if (localStorage.getItem("elements") == null) {
+    localStorage.setItem("elements", JSON.stringify(elements));
+  } else {
+    localStorage.setItem("elements", JSON.stringify(elements));
+  }
+  display();
 }
 
 // Get the modal
@@ -153,3 +154,4 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+

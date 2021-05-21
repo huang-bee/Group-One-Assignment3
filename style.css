@@ -185,6 +185,93 @@ input:focus::-webkit-input-placeholder {
     color: #3B67BB;
 }
 
+.list_item_wrapper {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+}
+
+.list_item {
+    margin: 0;
+    padding: 0;
+    border-bottom: solid 1px #dadce0;
+    height: 64px;
+    align-content: center;
+    display: inline-flex;
+    padding: 0;
+    border: none;
+    outline: none;
+    overflow: hidden;
+    font-weight: 500;
+    font-family: roboto;
+    align-self: center;
+    background: none;
+    text-decoration: none;
+    box-sizing: border-box;
+    border-bottom: solid 1px #dadce0;
+    margin: 0;
+    width: 100%;
+}
+
+.list_item_text {
+    display: inline-flex !important;
+    align-items: center !important;
+    height: 100% !important;
+    white-space: nowrap !important;
+    padding: 0;
+    font-family: Roboto;
+    font-weight: 500;
+    font-size: 24px;
+    color: #000;
+    margin: 0 16px;
+    flex-grow: 2;
+    overflow: hidden;
+}
+
+.remove_button_text, .remove_button_icon {
+    pointer-events: none;
+    color: #B00020;
+}
+
+.remove_button_text {
+    font-size: 14px;
+}
+
+.remove_button_icon {
+    
+}
+
+.remove_button {
+    height: 32px;
+    background: rgba(176, 0, 32, .1);
+    border-radius: 4px;
+    margin: 0;
+    color: #B00020;
+}
+
+.browse_button_text, .browse_button_icon {
+    pointer-events: none;
+    color: #3B67BB;
+}
+
+.browse_button_text {
+    font-size: 14px;
+}
+
+.remove_button_icon {
+    
+}
+
+.browse_button {
+    height: 32px;
+    background: rgba(59, 103, 187, .1);
+    border-radius: 4px;
+    margin: 0;
+
+    margin-left: auto;
+}
+
 .inner_nav {
     height: 32px;
     display: inline-flex;
@@ -605,11 +692,6 @@ p {
 .nutrient_wrapper_header span {
     color: #5f6368;
 }
-
-input[type=checkbox] {
-    display: none;
-}
-
 label {
   display: inline-block;
   cursor: pointer;
@@ -644,18 +726,6 @@ input[type=checkbox]:checked + label:after {
     transition: none !important;
 }
 
-li {
-    list-style-type: none;
-    font-size: 35px;
-    max-width: 90%;
-}
-
-.remove {
-    margin-left: 20px;
-}
-
-
-
 
 .signin_button {
     display: inline-flex;
@@ -678,21 +748,6 @@ li {
 .signin_button:hover {
     color: #3B67BB;
 }
-
-
-
-input[type=text], input[type=password] {
-    width: 100%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-  }
-  
-.container
-
-  /* Set a style for all buttons */
   
 
   
@@ -731,4 +786,3 @@ input[type=text], input[type=password] {
     background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
     padding-top: 60px;
   }
-  

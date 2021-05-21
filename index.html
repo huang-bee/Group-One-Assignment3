@@ -28,18 +28,18 @@
     </header>
     <div class="additem_container">
         <div class="input_container">
-            <button class="additem_button_button">
+            <button type="submit" class="additem_button button" onclick="addElement()">
                 <span class="material-icons-outlined button_icon">add</span>
                 <span class="button_text">Add item</span>
             </button>
             <div class="resizable_text_box">
-                <input class="question_text_box" name="question[what]" placeholder="Write here..." type="text" />
+                <input type="text" id="myInput" class="question_text_box" placeholder="Write here..."/>
             </div>
-            <ul>
-            </ul>
         </div>
     </div>
     <main>
+        <ul class="list_item_wrapper todo-items">
+        </ul>
     </main>
     <script src="javascript.js"></script>
 </body>
