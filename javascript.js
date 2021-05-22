@@ -161,3 +161,13 @@ window.onclick = function(event) {
     }
 }
 
+function show_deliveryorpickup() {
+  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("deliveryorpickup_wrapper").style.display = "flex";
+}
+
+function show_deliverydetails() {
+  document.getElementById("deliveryorpickup_wrapper").style.display = "none";
+  document.getElementById("deliverydetails_wrapper").style.display = "flex";
+}
+
