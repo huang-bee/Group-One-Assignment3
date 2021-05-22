@@ -23,26 +23,65 @@
             <a href="Browse.html" class="nav_button button"><span class="button_text">Browse Products</span></a>
             <a href="index.html" class="nav_button button"><span class="button_text">View Cart</span></a>
             <a href="#" class="nav_button button"><span class="button_text">About</span></a>
-            <a href="#" class="nav_button nav_button_active button"><span class="button_text">Log in/Sign up</span></a>
+            <a href="signup.html" class="nav_button nav_button_active button"><span class="button_text">Log in/Sign up</span></a>
         </nav>
     </header>
-
 
     <main>
         <div class="inner_nav">
             <a href="#" class="button"><span class="button_text">Log in/Sign up</span></a>
         </div>
-        <div>
-            <a href="create_account.html">
-                <button class="signin_button button">
+        <section id="login_wrapper">
+            <div class="card_buttons_wrapper">
+                <button type="submit" class="login_button button" onclick="show_createaccount()">
                     <span class="button_text">I am a new user</span>
                 </button>
-            <a herf="login.html"></a>
-                <button class="signin_button button">
+                <button type="submit" class="login_button button" onclick="show_existingaccount()">
                     <span class="button_text">I have an existing account</span>
                 </button>
-            
-        </div>
+            </div>
+        </section>
+        <section id="createaccount_wrapper">
+            <div class="all_inputs">
+            <div class="inputs_wrapper">
+                <div class="input_wrapper emailPhoneNumber">
+                    <input type="text" placeholder="Email or phone number">
+                </div>
+                <div class="input_wrapper password">
+                    <input type="text" placeholder="Password">
+                </div>
+                <div class="input_wrapper confirmPassword">
+                    <input type="text" placeholder="Confirm password">
+                </div>
+                <button type="button_text">Create account</button>
+            </div>
+            </div>
+        </section>
+        <section id="existingaccount_wrapper">
+            <div class="all_inputs">
+            <div class="inputs_wrapper">
+                <div class="input_wrapper emailPhoneNumber">
+                    <input type="text" placeholder="Email or phone number">
+                </div>
+                <button type="submit" class="button_text">Next</button>
+                <button type="forgot_button">Forgot email?</button>
+            </div>
+            </div>
+        </section>
+
+
+        <section id="existingaccount_wrapper">
+            <div class="all_inputs">
+            <div class="inputs_wrapper">
+                <div class="input_wrapper password">
+                    <input type="text" placeholder="Password">
+                </div>
+                <button type="button_text">Create account</button>
+            </div>
+            </div>
+        </section>
+
+
     </main>
     <script src="javascript.js"></script>
 </body>

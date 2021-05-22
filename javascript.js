@@ -215,3 +215,15 @@ function show_confirmorder() {
   place_order_button_text.innerHTML = "Confirm order";
 }
 
+
+
+function show_createaccount() {
+  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("createaccount_wrapper").style.display = "flex";
+}
+
+function show_existingaccount() {
+  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("existingaccount_wrapper").style.display = "flex";
+}
+

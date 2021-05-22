@@ -1032,70 +1032,19 @@ input[type=checkbox]:checked+label:after {
 }
 
 
-.signin_button {
-    display: inline-flex;
-    width: 322px;
-    height: 24px;
-    left: 312px;
-    top: 348px;
-    background: rgba(59, 103, 187, 0.1);
-    border-radius: 2px;
-}
-
-.signin_button .button_text {
-    align-items: center;
-    font-size: 10px;
-    padding-right: 8px;
-    color: #3B67BB;
-}
-
-
-.signin_button:hover {
-    color: #3B67BB;
-}
-
-
-
-/* Center the image and position the close button */
-.imgcontainer {
-    text-align: center;
-    margin: 24px 0 12px 0;
-    position: relative;
-}
-
-img.avatar {
-    width: 40%;
-    border-radius: 50%;
-}
-
-.container {
-    padding: 16px;
-}
-
-span.psw {
-    float: right;
-    padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-    display: none;
-    /* Hidden by default */
-    position: fixed;
-    /* Stay in place */
-    z-index: 1;
-    /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%;
-    /* Full width */
+#createaccount_wrapper {
+    display: flex;
+    justify-content: center;
     height: 100%;
-    /* Full height */
-    overflow: auto;
-    /* Enable scroll if needed */
-    background-color: rgb(0, 0, 0);
-    /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4);
-    /* Black w/ opacity */
-    padding-top: 60px;
+}
+#createaccount_wrapper {
+    display: flex;
+    justify-content: center;
+    height: 100%;
+}
+
+.forgot_button {
+    background: rgba(59, 103, 187, 0.1);
+    height: 24px;
+    border-radius: 2px;
 }
