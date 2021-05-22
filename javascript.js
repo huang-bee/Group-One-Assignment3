@@ -103,9 +103,9 @@ function show_allergens() {
   document.getElementById("allergens_button").classList.add("nav_button_active");
 }
 
-var input = document.getElementById("myInput");
+var inputenter = document.getElementById("myInput");
 
-input.addEventListener("keyup", function(event) {
+inputenter.addEventListener("keyup", function(event) {
   if (event.keyCode === 13) {
   addElement();
   }
@@ -169,5 +169,49 @@ function show_deliveryorpickup() {
 function show_deliverydetails() {
   document.getElementById("deliveryorpickup_wrapper").style.display = "none";
   document.getElementById("deliverydetails_wrapper").style.display = "flex";
+}
+
+function show_purchasedetails() {
+  document.getElementById("deliverydetails_wrapper").style.display = "none";
+  document.getElementById("purchasedetails_wrapper").style.display = "flex";
+}
+
+
+function changehref(e) {
+
+  if (document.getElementById('cvv').value !== "") {
+
+const place_order_button = document.getElementById('place_order_button');
+const place_order_button_icon = document.getElementById('place_order_button_icon');
+const place_order_button_text = document.getElementById('place_order_button_text');
+
+    place_order_button.style.backgroundColor = "#3B67BB";
+    place_order_button_icon.style.color = "#fff";
+    place_order_button_text.style.color = "#fff";
+    place_order_button.setAttribute( "onClick", "javascript: show_confirmorder();" );
+
+
+
+
+  } else {
+    place_order_button.style.backgroundColor = "rgba(0, 0, 0, 0.025)";
+    place_order_button_icon.style.color = "#5f6368";
+    place_order_button_text.style.color = "#5f6368";
+    place_order_button.onclick( "onClick", "javascript: " );
+  }
+}
+
+function show_confirmorder() {
+
+  const place_order_button = document.getElementById('place_order_button');
+  const place_order_button_text = document.getElementById('place_order_button_text');
+
+  document.getElementById('confirm_order').style.display = "inline-flex";
+  place_order_button.style.display = "none"
+
+  document.getElementById("purchase_details_wrapper").style.display = "none";
+  document.getElementById("checkout_wrapper").style.gridTemplateColumns = "1fr";
+  
+  place_order_button_text.innerHTML = "Confirm order";
 }
 

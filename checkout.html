@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css" rel="stylesheet">
     <link
         href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
         rel="stylesheet">
@@ -21,7 +22,8 @@
         </a>
         <nav>
             <a href="Browse.html" class="nav_button button"><span class="button_text">Browse Products</span></a>
-            <a href="index.html" class="nav_button nav_button_active button"><span class="button_text">View Cart</span></a>
+            <a href="index.html" class="nav_button nav_button_active button"><span class="button_text">View
+                    Cart</span></a>
             <a href="#" class="nav_button button"><span class="button_text">About</span></a>
             <a href="signup.html" class="nav_button button"><span class="button_text">Log in/Sign up</span></a>
         </nav>
@@ -31,54 +33,137 @@
         <div class="inner_nav">
             <a href="#" class="button"><span class="button_text">Log in:</span></a>
         </div>
-        <div class="checkout_wrapper">
-            <div class="purchase_details_wrapper">
-            <section id="login_wrapper">
-                <div class="card_buttons_wrapper">
-                    <button type="submit" class="login_button button" onclick="show_deliveryorpickup()">
-                        <span class="button_text">I am a new user</span>
-                    </button>
-                    <button type="submit" class="login_button button" onclick="show_deliveryorpickup()">
-                        <span class="button_text">I have an existing account</span>
-                    </button>
+        <div class="checkout_wrapper" id="checkout_wrapper">
+            <div class="purchase_details_wrapper" id="purchase_details_wrapper">
+                <section id="login_wrapper">
+                    <div class="card_buttons_wrapper">
+                        <button type="submit" class="login_button button" onclick="show_deliveryorpickup()">
+                            <span class="button_text">I am a new user</span>
+                        </button>
+                        <button type="submit" class="login_button button" onclick="show_deliveryorpickup()">
+                            <span class="button_text">I have an existing account</span>
+                        </button>
+                    </div>
+                </section>
+                <section id="deliveryorpickup_wrapper">
+                    <div class="card_buttons_wrapper">
+                        <button type="submit" class="login_button button" onclick="show_deliverydetails()">
+                            <span class="button_text">Deliver my groceries to me</span>
+                        </button>
+                        <button type="submit" class="login_button button" onclick="show_deliverydetails()">
+                            <span class="button_text">I will pick my groceries up</span>
+                        </button>
+                    </div>
+                </section>
+                <section id="deliverydetails_wrapper">
+                    <div class="all_inputs">
+                    <div class="inputs_wrapper">
+                        <div class="input_wrapper firstName">
+                            <input type="text" placeholder="First name">
+                        </div>
+                        <div class="input_wrapper lastName">
+                            <input type="text" placeholder="Last name">
+                        </div>
+                        <div class="input_wrapper streetAddress">
+                            <input type="text" placeholder="Street address">
+                        </div>
+                        <div class="input_wrapper city">
+                            <input type="text" placeholder="City">
+                        </div>
+                        <div class="input_wrapper suburb">
+                            <input type="text" placeholder="Suburb">
+                        </div>
+                        <div class="input_wrapper postCode">
+                            <input type="text" placeholder="Post code">
+                        </div>
+                        <div class="input_wrapper phoneNumber">
+                            <input type="text" placeholder="Phone number">
+                        </div>
+                    </div>
+                    <div class="delivery_checkbox">
+                    <label for="checkbox-1" class="mdc-form-field checkbox_button">
+                        <div class="mdc-checkbox">
+                            <input onclick="validate()" type="checkbox" class="mdc-checkbox__native-control"
+                                id="checkbox-1" />
+                            <div class="mdc-checkbox__background">
+                                <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                    <path class="mdc-checkbox__checkmark-path" fill="none"
+                                        d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                </svg>
+                                <div class="mdc-checkbox__mixedmark"></div>
+                            </div>
+                            <div class="mdc-checkbox__ripple"></div>
+                        </div>
+                        My billing address is the same as my delivery address.
+                    </label>
                 </div>
-            </section>
-            <section id="deliveryorpickup_wrapper">
-                <div class="card_buttons_wrapper">
-                    <button type="submit" class="login_button button" onclick="show_deliverydetails()">
-                        <span class="button_text">Deliver my groceries to me</span>
-                    </button>
-                    <button type="submit" class="login_button button" onclick="show_deliverydetails()">
-                        <span class="button_text">I will pick my groceries up</span>
-                    </button>
+                <button type="submit" class="delivery_button button" onclick="show_purchasedetails()">
+                    <span class="button_text">Next</span>
+                </button>
                 </div>
-            </section>
-            <section id="deliverydetails_wrapper">
-                <div class="inputs_wrapper">
-                <input type="text" placeholder="First name">
-                <input type="text" placeholder="Last name">
-                <input type="text" placeholder="Street address">
-                <input type="text" placeholder="City">
-                <input type="text" placeholder="Suburb">
-                <input type="text" placeholder="Post code">
-                <input type="text" placeholder="Phone number">
+                </section>
+                <section id="purchasedetails_wrapper">
+                    <div class="all_inputs">
+                        <div class="purchase_checkbox">
+                            <label for="checkbox-1" class="mdc-form-field checkbox_button">
+                                <div class="mdc-checkbox">
+                                    <input onclick="validate()" type="checkbox" class="mdc-checkbox__native-control"
+                                        id="checkbox-1" />
+                                    <div class="mdc-checkbox__background">
+                                        <svg class="mdc-checkbox__checkmark" viewBox="0 0 24 24">
+                                            <path class="mdc-checkbox__checkmark-path" fill="none"
+                                                d="M1.73,12.91 8.1,19.28 22.79,4.59" />
+                                        </svg>
+                                        <div class="mdc-checkbox__mixedmark"></div>
+                                    </div>
+                                    <div class="mdc-checkbox__ripple"></div>
+                                </div>
+                                Debit/Credit card.
+                            </label>
+                        </div>
+                    <div class="inputs_wrapper">
+                        <div class="input_wrapper nameonCard">
+                            <input type="text" placeholder="Name on card">
+                        </div>
+                        <div class="input_wrapper cardNumber">
+                            <input type="text" placeholder="Card number">
+                        </div>
+                        <div class="input_wrapper expiryDate">
+                            <input type="text" placeholder="Expiry date DD/MM/YYYY">
+                        </div>
+                        <div class="input_wrapper">
+                            <input type="text" placeholder="CVV" id="cvv" oninput="changehref()">
+                        </div>
+                    </div>
+                </div>
+                </section>
             </div>
-            </section>
-        </div>
             <div class="cart_wrapper">
                 <div class="cart_content">
                     <h4>Cart overview</h4>
                     <h4 class="items_in_list">8 items in list</h4>
                     <h4 class="items_in_cart">1 item in cart</h4>
                     <ul class="cart_list">
-                        <li class="cart_item"><span class="button_text">Cadbury Dairy Milk Chocolate Block</span><span class="button_text">$3.59</span></li>
+                        <li class="cart_item"><span class="button_text">Cadbury Dairy Milk Chocolate Block</span><span
+                                class="button_text">$3.59</span></li>
                     </ul>
-                    <div class="total"><span class="button_text">Total:</span><span class="button_text">$3.59</span></div>
+                    <div class="total"><span class="button_text">Total:</span><span class="button_text">$3.59</span>
+                    </div>
                 </div>
-                <a href="checkout.html" class="checkout_button button" onclick="addElement()">
-                    <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                    <span class="button_text">Place order</span>
-                </a>
+                <button class="place_order_button button" id="place_order_button">
+                    <span class="material-icons-outlined button_icon" id="place_order_button_icon">add_shopping_cart</span>
+                    <span class="button_text" id="place_order_button_text">Place order</span>
+                </button>
+                <div class="confirm_order" id="confirm_order">
+                    <a class="backtolist_order_button button" id="place_order_button" href="index.html">
+                        <span class="material-icons-outlined button_icon" id="place_order_button_icon">view_list</span>
+                        <span class="button_text" id="place_order_button_text">Back to list</span>
+                    </a>
+                    <a class="confirm_order_button button" id="place_order_button" href = "orderPlaced.html">
+                        <span class="material-icons-outlined button_icon" id="place_order_button_icon">shopping_bag</span>
+                        <span class="button_text" id="place_order_button_text">Confirm order</span>
+                    </a>
+                </div>
             </div>
         </div>
     </main>

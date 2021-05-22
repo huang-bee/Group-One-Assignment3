@@ -378,6 +378,56 @@ input:focus::-webkit-input-placeholder {
     gap: 32px;
 }
 
+.cart_wrapper {
+    height: 100%;
+}
+
+.place_order_button {
+    background-color: rgba(0, 0, 0, 0.025);
+    width: 100%;
+    height: 64px;
+    border-radius: 8px;
+}
+
+.place_order_button span {
+    color: #5f6368;
+    font-size: 24px;
+}
+
+.confirm_order {
+    display: none;
+    gap: 16px;
+}
+
+.confirm_order_button {
+    background-color: #3B67BB;
+    width: 100%;
+    height: 64px;
+    border-radius: 8px;
+}
+
+.confirm_order_button span {
+    color: #fff;
+    font-size: 24px;
+}
+
+.backtolist_order_button {
+    background-color: rgba(59, 103, 187, 0.1);
+    width: 100%;
+    height: 64px;
+    border-radius: 8px;
+}
+
+.backtolist_order_button span {
+    color: #3B67BB;
+    font-size: 24px;
+}
+
+.purchase_details_wrapper section {
+    max-width: calc(100vw - 32px - 32px - 32px - 540px);
+    width: 100%;
+}
+
 #login_wrapper {
     display: flex;
     justify-content: center;
@@ -405,16 +455,119 @@ input:focus::-webkit-input-placeholder {
     display: none;
     justify-content: center;
     height: 100%;
-    background-color: aquamarine;
+}
 
+.all_inputs {
+    margin: auto 0;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
 }
 
 .inputs_wrapper {
-    background-color: aqua;
-    margin: auto 0;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    width: 100%;
+    gap: 16px;
+}
 
+.input_wrapper {
+    height: 32px;
+    border: 1px solid #dadce0;
+    border-radius: 16px;
+    outline: none;
+    padding: 0 8px;
+}
+
+.inputs_wrapper input {
+    height: 32px;
+    border: none;
+    outline: none;
+    width: 100%;
+    background-color: transparent;
+}
+
+.delivery_checkbox  {
+    padding: 0;
+    margin: 0;
+    margin-top: 32px;
+}
+
+.delivery_checkbox label {
+    margin: 0;
+}
+
+.delivery_button {
+    background-color: #3B67BB;
+    height: 32px;
+    border-radius: 4px;
+    margin-right: auto;
+    margin-top: 32px;
+}
+
+.delivery_button span {
+    padding: 0 16px;
+    color: #fff;
+    margin: 0;
+}
+
+.streetAddress {
+    grid-column: 1/3;
+}
+
+.phoneNumber {
+    grid-row: 5/6;
+}
+
+#purchasedetails_wrapper {
+    display: none;
+    justify-content: center;
+    height: 100%;
+}
+
+.purchase_checkbox  {
+    padding: 0;
+    margin: 0;
+    margin-bottom: 16px;
+}
+
+.purchase_checkbox label {
+    margin: 0;
+}
+
+.nameonCard, .cardNumber {
+    grid-column: 1/3;
+}
+
+.order_placed_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.order_placed_content {
+    display: flex;
+    flex-direction: column;
+    margin-top: auto;
+    margin-bottom: auto;
+    gap: 32px;
+}
+
+.order_placed_text {
+    align-self: center;
+    justify-self: center;
+}
+
+.placed_button {
+    background-color: rgba(59, 103, 187, .1);
+    height: 32px;
+    border-radius: 4px;
+}
+
+.placed_button span {
+    color: #3B67BB;
 }
 
 .inner_nav {
