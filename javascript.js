@@ -14,9 +14,8 @@ function myFunction() {
   }
 }
 
-
 // Close the dropdown menu if the user clicks outside of it
-window.addEventListener("click", function(event) {
+window.addEventListener("click", function (event) {
   const dropdown_button = document.getElementById("myDropdown_button");
   const dropdown_arrow = document.getElementById("dropdown_arrow");
 
@@ -24,21 +23,20 @@ window.addEventListener("click", function(event) {
   var i;
 
   if (!event.target.matches(".dropdown_button")) {
-      if (dropdown.classList.contains("show")) {
-        dropdown.classList.remove("show");
-        dropdown_button.classList.remove("dropdown_button_active");
-        dropdown_arrow.innerHTML = ("arrow_drop_down");
-      }
+    if (dropdown.classList.contains("show")) {
+      dropdown.classList.remove("show");
+      dropdown_button.classList.remove("dropdown_button_active");
+      dropdown_arrow.innerHTML = ("arrow_drop_down");
+    }
   }
 });
 
-
 //prevents transition effects from playing while the window is being resized
 var resizeTimer;
-window.addEventListener("resize", function() {
+window.addEventListener("resize", function () {
   document.body.classList.add("resize-animation-stopper");
   clearTimeout(resizeTimer);
-  resizeTimer = setTimeout(function() {
+  resizeTimer = setTimeout(function () {
     document.body.classList.remove("resize-animation-stopper");
   }, 400);
 });
@@ -54,25 +52,23 @@ function replaceText(e) {
   dropdown_text.innerHTML = "Sort by: " + e.target.innerHTML;
 }
 
+// filters by items that are on sale
 function validate() {
-
   var x = document.getElementsByClassName("notonsale");
-
   x = Array.prototype.slice.call(x);
-
   if (document.getElementById("checkbox-1").checked) {
-
-    x.forEach( function(element){
+    x.forEach(function (element) {
       element.style.display = "none";
-  });
+    });
 
   } else {
-    x.forEach( function(element){
+    x.forEach(function (element) {
       element.style.display = "flex";
-  });
+    });
   }
 }
 
+//switches content on the product details page
 function show_ingredients() {
   document.getElementById("ingredients").style.display = "block";
   document.getElementById("nutritionalInformation").style.display = "none";
@@ -103,21 +99,26 @@ function show_allergens() {
   document.getElementById("allergens_button").classList.add("nav_button_active");
 }
 
-var inputenter = document.getElementById("myInput");
 
-inputenter.addEventListener("keyup", function(event) {
+// allows the user to press enter instead of clicking the add item button
+var inputenter = document.getElementById("myInput");
+inputenter.addEventListener("keyup", function (event) {
   if (event.keyCode === 13) {
-  addElement();
+    addElement();
   }
 });
 
+// initiates list content (elements) and initiates local storage
 var elements = [];
-window.onload = function() {
+window.onload = function () {
   if (JSON.parse(localStorage.getItem("elements")) != null)
     elements = JSON.parse(localStorage.getItem("elements"));
   console.log(elements);
   display();
 };
+
+
+// stores the list text in local storage
 function addElement() {
   if (document.querySelector(".question_text_box").value.trim() != "") {
     elements.push(document.querySelector(".question_text_box").value.trim());
@@ -129,25 +130,31 @@ function addElement() {
     display();
   }
 }
+
+// adds a list item with the text that the user entered
 function display() {
   document.querySelector(".list_item_wrapper").innerHTML = "";
-  let getText = "noResults";
-  if (document.querySelector(".question_text_box").value == "chocolate") {
-    getText = "Browse";
-  } 
-if (document.querySelector(".question_text_box").value == "bread") {
-    getText = "bread";
-  }
+
   for (var i = 0; i < elements.length; i++)
-    document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del("+ i +")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] + `<a href='${getText}.html' class='button browse_button' onclick="redirect()"><span onclick="redirect()" class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text' onclick="redirect()" >Browse range</span></a></span></span></li>`;
-    console.log(document.querySelector(".question_text_box").value);
-    // if (document.querySelector(".question_text_box").value == "chocolate") {
-    //   document.querySelector(".list_item_wrapper").innerHTML += "<a href = 'browse.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a>";
-    // } else if (document.querySelector(".question_text_box").value == "bread") {
-    //   document.querySelector(".list_item_wrapper").innerHTML += "<a href = 'bread.html' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></a>";
-    // }
-    document.querySelector(".question_text_box").value = "";
+    document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del(" + i + ")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] + `<button onclick = 'redirect(event)' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></button></span></span></li>`;
+  console.log(document.querySelector(".question_text_box").value);
+  document.querySelector(".question_text_box").value = "";
+}
+
+
+// if the user has added either bread or chocolate link them to the correct page, if not, link them to the no results page
+function redirect(event) {
+  var x = event.target.previousSibling.textContent.toLowerCase();
+  if (x == 'chocolate') {
+    window.location.href = 'Browse.html';
+  } else if (x == 'bread') {
+    window.location.href = 'bread.html';
+  } else {
+    window.location.href = 'noResults.html';
   }
+}
+
+//remove the list item from the local storage
 function del(index) {
   elements.splice(index, 1);
   if (localStorage.getItem("elements") == null) {
@@ -162,10 +169,10 @@ function del(index) {
 var modal = document.getElementById('id01');
 
 // When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-    if (event.target == modal) {
-        modal.style.display = "none";
-    }
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }
 
 function show_deliveryorpickup() {
@@ -188,23 +195,20 @@ function changehref(e) {
 
   if (document.getElementById('cvv').value !== "") {
 
-const place_order_button = document.getElementById('place_order_button');
-const place_order_button_icon = document.getElementById('place_order_button_icon');
-const place_order_button_text = document.getElementById('place_order_button_text');
+    const place_order_button = document.getElementById('place_order_button');
+    const place_order_button_icon = document.getElementById('place_order_button_icon');
+    const place_order_button_text = document.getElementById('place_order_button_text');
 
     place_order_button.style.backgroundColor = "#3B67BB";
     place_order_button_icon.style.color = "#fff";
     place_order_button_text.style.color = "#fff";
-    place_order_button.setAttribute( "onClick", "javascript: show_confirmorder();" );
-
-
-
+    place_order_button.setAttribute("onClick", "javascript: show_confirmorder();");
 
   } else {
     place_order_button.style.backgroundColor = "rgba(0, 0, 0, 0.025)";
     place_order_button_icon.style.color = "#5f6368";
     place_order_button_text.style.color = "#5f6368";
-    place_order_button.onclick( "onClick", "javascript: " );
+    place_order_button.onclick("onClick", "javascript: ");
   }
 }
 
@@ -218,7 +222,7 @@ function show_confirmorder() {
 
   document.getElementById("purchase_details_wrapper").style.display = "none";
   document.getElementById("checkout_wrapper").style.gridTemplateColumns = "1fr";
-  
+
   place_order_button_text.innerHTML = "Confirm order";
 }
 
@@ -238,5 +242,3 @@ function show_password() {
   document.getElementById("existingaccount_wrapper").style.display = "none";
   document.getElementById("password_wrapper").style.display = "flex";
 }
-
-
