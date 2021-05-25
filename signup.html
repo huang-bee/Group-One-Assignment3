@@ -53,7 +53,9 @@
                 <div class="input_wrapper confirmPassword">
                     <input type="text" placeholder="Confirm password"> 
                 </div>
-                <button type="button_text">Create account</button>
+                <button type="submit" class="create_button" onclick="show_accountmade()">
+                <span class="button_text">Create account</span>
+            </button>
             </div>
             </div>
         </section>
@@ -63,18 +65,22 @@
                 <div class="input_wrapper emailPhoneNumber">
                     <input type="text" placeholder="Email or phone number">
                 </div>
-                <button type="forgot_button">Forgot email?</button>
-                <button class="button_text">Next</button>
+                <button class="forgot_button">Forgot email?</button>
+                <button type="submit" class="create_button" onclick="show_password()">
+                    <span class="button_text">Next</span>
             </div>
             </div>
         </section>
-        <section id="existingaccount_wrapper">
+        <section id="password_wrapper">
             <div class="all_inputs">
             <div class="inputs_wrapper">
-                <div class="input_wrapper password">
+                <div class="input_wrapper existingPassword">
                     <input type="text" placeholder="Password">
                 </div>
-                <button class="button_text">Create account</button>
+                <button class="forgot_button">Forgot password?</button>
+                <button type="submit" class="create_button" onclick="show_accountmade()">
+                    <span class="button_text">Sign in</span>
+                </button>
             </div>
             </div>
         </section>

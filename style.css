@@ -1032,12 +1032,43 @@ input[type=checkbox]:checked+label:after {
 }
 
 
+
 #createaccount_wrapper {
-    display: flex;
-    flex-wrap: wrap;
+    display: none;
+    flex-flow: row;
+    align-content: center;
     justify-content: center;
     height: 100%;
 }
+
+.emailPhoneNumber {
+    grid-row: 1/3;
+}
+
+.password {
+    grid-row: 2/3;
+}
+
+.confirmPassword {
+    grid-row: 3/3;
+}
+
+
+
+.create_button {
+    background-color: #3B67BB;
+    border-color: #3B67BB;
+    box-align: center;
+    height: 32px;
+    margin-top: 32px;
+    grid-row: 4/4;
+}
+
+.create_button span {
+    color: #fff;
+    margin: 0;
+}
+
 #accountmade_wrapper {
     display: none;
     justify-content: center;
@@ -1050,8 +1081,30 @@ input[type=checkbox]:checked+label:after {
     height: 100%;
 }
 
+.existingPassword {
+    grid-row: 1/3;
+}
+
+#password_wrapper {
+    display: none;
+    justify-content: center;
+    height: 100%;
+}
+
 .forgot_button {
-    background: rgba(59, 103, 187, 0.1);
-    height: 24px;
-    border-radius: 2px;
+    background-color: #ebf0f8;
+    border-color: #ebf0f8;
+    box-align: center;
+    height: 32px;
+    margin-top: 32px;
+    width: 140px;
+}
+
+.forgot_button span {
+    color: #3B67BB;
+    margin: 0;
+}
+
+.forgot_button text {
+    color: #3B67BB;
 }

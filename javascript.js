@@ -223,7 +223,13 @@ function show_createaccount() {
 }
 
 function show_existingaccount() {
-  document.getElementById("existing_wrapper").style.display = "none";
+  document.getElementById("login_wrapper").style.display = "none";
   document.getElementById("existingaccount_wrapper").style.display = "flex";
 }
+
+function show_password() {
+  document.getElementById("existingaccount_wrapper").style.display = "none";
+  document.getElementById("password_wrapper").style.display = "flex";
+}
+
 
