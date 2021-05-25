@@ -890,6 +890,81 @@ button.active:hover {
     background-size: cover;
 }
 
+#anchorblue3l {
+    background-image: url(images/milk/anchorblue3L.jpg);
+    background-size: cover;
+}
+
+#anchorblue2l {
+    background-image: url(images/milk/anchorblue2l.jpg);
+    background-size: cover;
+}
+
+#anchorblue300 {
+    background-image: url(images/milk/anchorblue300.jpg);
+    background-size: cover;
+}
+
+#anchorcalci {
+    background-image: url(images/milk/anchorcalci.jpg);
+    background-size: cover;
+}
+
+#anchortrim {
+    background-image: url(images/milk/anchortrim.jpg);
+    background-size: cover;
+}
+
+#valuemilk2l {
+    background-image: url(images/milk/valuemilk2l.jpg);
+    background-size: cover;
+}
+
+#valuetrim2L {
+    background-image: url(images/milk/valuetrim2L.jpg);
+    background-size: cover;
+}
+
+#valuelite1l {
+    background-image: url(images/milk/valuelite1l.jpg);
+    background-size: cover;
+}
+
+#pamsmilk1l {
+    background-image: url(images/milk/pamsmilk1l.jpg);
+    background-size: cover;
+}
+
+#vitasoyoat {
+    background-image: url(images/milk/vitasoyoat.jpg);
+    background-size: cover;
+}
+
+#sanitariumalmond {
+    background-image: url(images/milk/sanitariumalmond.jpg);
+    background-size: cover;
+}
+
+#arnottcrackers {
+    background-image: url(images/crackers/arnottcrackers.jpg);
+    background-size: cover;
+}
+
+#arnottched {
+    background-image: url(images/crackers/arnottched.jpg);
+    background-size: cover;
+}
+
+#doritocrackers {
+    background-image: url(images/crackers/doritocrackers.jpg);
+    background-size: cover;
+}
+
+#huntleycrackers {
+    background-image: url(images/crackers/huntleycrackers.jpg);
+    background-size: cover;
+}
+
 h1 {
     margin: 0;
     padding: 0;
