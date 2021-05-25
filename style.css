@@ -1034,11 +1034,18 @@ input[type=checkbox]:checked+label:after {
 
 #createaccount_wrapper {
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     height: 100%;
 }
-#createaccount_wrapper {
-    display: flex;
+#accountmade_wrapper {
+    display: none;
+    justify-content: center;
+    height: 100%;
+}
+
+#existingaccount_wrapper {
+    display: none;
     justify-content: center;
     height: 100%;
 }

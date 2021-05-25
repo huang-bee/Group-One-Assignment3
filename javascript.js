@@ -223,7 +223,7 @@ function show_createaccount() {
 }
 
 function show_existingaccount() {
-  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("existing_wrapper").style.display = "none";
   document.getElementById("existingaccount_wrapper").style.display = "flex";
 }
 
