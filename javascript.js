@@ -149,6 +149,10 @@ function redirect(event) {
     window.location.href = 'Browse.html';
   } else if (x == 'bread') {
     window.location.href = 'bread.html';
+  } else if (x == 'milk'){
+    window.location.href = 'milk.html';
+  } else if (x == 'crackers' || x== 'cracker'){
+    window.location.href = 'crackers.html';
   } else {
     window.location.href = 'noResults.html';
   }

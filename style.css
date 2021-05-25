@@ -835,6 +835,61 @@ button.active:hover {
     background-size: cover;
 }
 
+#tiptopfruit {
+    background-image: url(images/bread/Tiptopfruit.jpg);
+    background-size: cover;
+}
+
+#valuewhite {
+    background-image: url(images/bread/Valuewhite.jpg);
+    background-size: cover;
+}
+
+#vogel {
+    background-image: url(images/bread/Vogel.jpg);
+    background-size: cover;
+}
+
+#ploughmans {
+    background-image: url(images/bread/Ploughmans.jpg);
+    background-size: cover;
+}
+
+#naturewhite {
+    background-image: url(images/bread/Naturewhite.jpg);
+    background-size: cover;
+}
+
+#molenberg {
+    background-image: url(images/bread/Molenberg.jpg);
+    background-size: cover;
+}
+
+#freyawholemeal {
+    background-image: url(images/bread/Freyawholemeal.jpg);
+    background-size: cover;
+}
+
+#freyamixed {
+    background-image: url(images/bread/Freyamixed.jpg);
+    background-size: cover;
+}
+
+#burgentoast {
+    background-image: url(images/bread/Burgentoast.jpg);
+    background-size: cover;
+}
+
+#mackenzietoast {
+    background-image: url(images/bread/Mackenzietoast.jpg);
+    background-size: cover;
+}
+
+#pamsbreadcrumbs {
+    background-image: url(images/bread/Pamsbreadcrumbs.jpg);
+    background-size: cover;
+}
+
 h1 {
     margin: 0;
     padding: 0;
