@@ -158,6 +158,14 @@ function redirect(event) {
   }
 }
 
+function details(event) {
+
+  alert(event.target.firstChild.innerHTML);
+  var x = event.target.firstChild.innerHTML;
+  document.getElementById('product_name').textContent = x;
+}
+
+
 //remove the list item from the local storage
 function del(index) {
   elements.splice(index, 1);

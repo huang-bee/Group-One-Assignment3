@@ -763,6 +763,7 @@ button.active:hover {
     flex-direction: column;
     text-decoration: none;
     transition: all .18s ease;
+    cursor: pointer;
 }
 
 .product:hover {
@@ -984,6 +985,11 @@ h4 {
     color: #5f6368;
 }
 
+.product h1, h4, .addtocart_wrapper {
+    text-align: start;
+    pointer-events: none;
+}
+
 .price {
     display: inline-flex;
     align-content: center;
@@ -994,16 +1000,17 @@ h4 {
     height: 32px;
     margin-top: auto;
     justify-content: space-between;
+    width: 100%;
 }
 
 .addtocart_button {
-    align-self: center;
     height: 32px;
-    float: left;
+    float: right;
     border-radius: 4px;
     padding-left: 8px;
     padding-right: 8px;
     background: #3B67BB;
+    pointer-events: all;
 }
 
 .addtocart_button:hover {}
