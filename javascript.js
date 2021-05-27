@@ -190,16 +190,22 @@ window.onclick = function (event) {
 function show_deliveryorpickup() {
   document.getElementById("login_wrapper").style.display = "none";
   document.getElementById("deliveryorpickup_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_loginprompt").style.display = "none";
+  document.getElementById("inner_nav_deliveryorpickup").style.display = "flex";
 }
 
 function show_deliverydetails() {
   document.getElementById("deliveryorpickup_wrapper").style.display = "none";
   document.getElementById("deliverydetails_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_deliveryorpickup").style.display = "none";
+  document.getElementById("inner_nav_deliverydetails").style.display = "flex";
 }
 
 function show_purchasedetails() {
   document.getElementById("deliverydetails_wrapper").style.display = "none";
   document.getElementById("purchasedetails_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_deliverydetails").style.display = "none";
+  document.getElementById("inner_nav_purchasedetails").style.display = "flex";
 }
 
 
@@ -239,18 +245,37 @@ function show_confirmorder() {
 }
 
 
+function show_cards_wrapper() {
+
+  document.getElementById("cards_wrapper").style.display = "flex";
+  document.getElementById("createaccount_wrapper").style.display = "none";
+  document.getElementById("existingaccount_wrapper").style.display = "none";
+  document.getElementById("password_wrapper").style.display = "none";
+  document.getElementById("inner_nav_loginSignup").style.display = "flex";
+  document.getElementById("inner_nav_createAccount").style.display = "none";
+  document.getElementById("inner_nav_email").style.display = "none";
+  document.getElementById("inner_nav_password").style.display = "none";
+}
+
 
 function show_createaccount() {
   document.getElementById("cards_wrapper").style.display = "none";
   document.getElementById("createaccount_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_loginSignup").style.display = "none";
+  document.getElementById("inner_nav_createAccount").style.display = "flex";
 }
 
 function show_existingaccount() {
   document.getElementById("cards_wrapper").style.display = "none";
   document.getElementById("existingaccount_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_loginSignup").style.display = "none";
+  document.getElementById("inner_nav_email").style.display = "flex";
+  document.getElementById("inner_nav_password").style.display = "none";
 }
 
 function show_password() {
   document.getElementById("existingaccount_wrapper").style.display = "none";
   document.getElementById("password_wrapper").style.display = "flex";
+  document.getElementById("inner_nav_email").style.display = "none";
+  document.getElementById("inner_nav_password").style.display = "flex";
 }

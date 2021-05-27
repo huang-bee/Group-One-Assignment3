@@ -28,8 +28,29 @@
     </header>
 
     <main>
-        <div class="inner_nav">
-            <a href="#" class="button"><span class="button_text">Log in:</span></a>
+        <div class="inner_nav inner_nav_checkout inner_nav_checkout_active" id="inner_nav_loginprompt">
+            <button class="button"><span class="button_text">Log in/Sign up:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_checkout" id="inner_nav_deliveryorpickup">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Delivery or pickup:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_checkout" id="inner_nav_deliverydetails">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_existingaccount()" class="button"><span class="button_text" id="product_name_nav">Delivery or pickup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Delivery details:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_checkout" id="inner_nav_purchasedetails">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_existingaccount()" class="button"><span class="button_text" id="product_name_nav">Delivery or pickup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Delivery details</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Billing details:</span></button>
         </div>
         <div class="checkout_wrapper" id="checkout_wrapper">
             <div class="purchase_details_wrapper" id="purchase_details_wrapper">

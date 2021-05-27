@@ -1224,11 +1224,26 @@ label {
 .login_cards_wrapper {
     margin: auto 0;
     display: flex;
-    width: 800px;
+    width: calc(100vw - 64px);
+    max-width: 800px;
     align-self: center;
     gap: 16px;
 }
 
 .login_cards_wrapper .button {
     width: 100%;
+}
+
+.inner_nav_signup {
+    display: none;
+}
+.inner_nav_signup_active {
+    display: flex;
+}
+
+.inner_nav_checkout {
+    display: none;
+}
+.inner_nav_checkout_active {
+    display: flex;
 }

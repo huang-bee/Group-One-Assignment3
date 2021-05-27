@@ -27,8 +27,25 @@
     </header>
 
     <main>
-        <div class="inner_nav">
-            <a href="signup.html" class="button"><span class="button_text">Log in/Sign up</span></a>
+        <div class="inner_nav inner_nav_signup inner_nav_signup_active" id="inner_nav_loginSignup">
+            <button class="button"><span class="button_text">Log in/Sign up:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_signup" id="inner_nav_createAccount">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Create account:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_signup" id="inner_nav_email">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Enter email:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_signup" id="inner_nav_password">
+            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_existingaccount()" class="button"><span class="button_text" id="product_name_nav">Enter email</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text" id="product_name_nav">Enter password:</span></button>
         </div>
         <section class="existingaccount" id="cards_wrapper">
             <div class="login_cards_wrapper">
