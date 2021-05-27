@@ -15,6 +15,61 @@
 </head>
 
 <body>
+    <div id="modal01" class="modal">
+        <div class="modal_content">
+            <div class="inner_nav">
+                <button onclick="closeModal()" class="button"><span class="button_text">Chocolate</span></button>
+                <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+                <a href="#" class="button"><span class="button_text" id="product_name_nav">Cadbury Dairy Milk Chocolate Block:</span></a>
+            </div>
+            <div class="product_details_wrapper">
+                <div class="product_image_wrapper" id="product_details_image">
+                    <a href="#" class="product_image_button button">
+                        <span class="material-icons-outlined button_icon">zoom_in</span>
+                    </a>
+                </div>
+                <div class="product_description_wrapper">
+                    <h1 id="product_name">Cadbury Dairy Milk Chocolate Block</h1>
+                    <h4>180g</h4>
+                    <div class="product_description_tabs">
+                        <button onclick="show_ingredients()" class="nav_button nav_button_active button" id="ingredients_button"><span class="button_text">Ingredients</span></button>
+                        <button onclick="show_nutritionalInformation()" class="nav_button button" id="nutritionalInformation_button"><span class="button_text">Nutritional information</span></button>
+                        <button onclick="show_allergens()" class="nav_button button" id="allergens_button"><span class="button_text">Allergens</span></button>
+                    </div>
+                    <section class="product_description_ingredients" id="ingredients">
+                        <p>Full Cream Milk, Sugar, Cocoa Butter, Cocoa Mass, Milk Solids, Emulsifiers (Soy Lecithin, 476),
+                            Flavours</p>
+                    </section>
+                    <section class="product_description_nutritionalInformation" id="nutritionalInformation">
+                        <div class="nutritionalInformation_wrapper">
+                            <div class="nutrient_wrapper nutrient_wrapper_header"><span>Nutrient</span><span>per 100g</span></div>
+                            <div class="nutrient_wrapper"><span>Energy</span><span>2250kJ</span></div>
+                            <div class="nutrient_wrapper"><span>Protein</span><span>7.6g</span></div>
+                            <div class="nutrient_wrapper"><span>Fat-Total</span><span>30.4g</span></div>
+                            <div class="nutrient_wrapper"><span>Fat-Saturated</span><span>19.2g</span></div>
+                            <div class="nutrient_wrapper"><span>Carbohydrates</span><span>57.3g</span></div>
+                            <div class="nutrient_wrapper"><span>sugar</span><span>56g</span></div>
+                            <div class="nutrient_wrapper"><span>Sodium</span><span>82mg</span></div>
+                        </div>
+                    </section>
+                    <section class="product_description_allergens" id="allergens">
+                        <p>Contains Milk and Soy</p>
+                        <p>May contain traces of Wheat, Peanuts and Tree Nuts</p>
+                    </section>
+                    <div class="addtocart_wrapper">
+                        <div class="price">
+                            <h1>$3.59</h1>
+                            <h4>ea</h4>
+                        </div>
+                        <button onclick="updateCart()" class="addtocart_button button">
+                            <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                            <span class="button_text">Add to cart</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     <script type="text/javascript" src="javascript.js"></script>
     <header>
         <a href="index.html" class="home_button button">
@@ -47,7 +102,7 @@
                                     d="M1.73,12.91 8.1,19.28 22.79,4.59" />
                             </svg>
                             <div class="mdc-checkbox__mixedmark"></div>
-                        </div>no 
+                        </div>
                         <div class="mdc-checkbox__ripple"></div>
                     </div>
                     On sale
@@ -70,186 +125,113 @@
             </div>
         </div>
         <div class="product_wrapper">
-            <button onclick="details(event)" class="product" id="cadbury"><h1>Cadbury Favourites Chocolates</h1><h4>265g</h4>
+            <button onclick="details(event, this)" class="product" id="cadbury"><h1>Cadbury Favourites Chocolates</h1><h4>265g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$9.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <a class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </a>
                 </div>
             </button>
-            <a href="product_details.html" class="product notonsale" id="snickers">
-                <h1>Snickers Chocolate Bar</h1>
+            <button onclick="details(event)" class="product notonsale" id="snickers"><h1>Snickers Chocolate Bar</h1>
                 <h4>50g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$1.49</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id="whittakers">
-                <h1>Whittaker's Creamy Milk Chocolate</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id="whittakers"><h1>Whittaker's Creamy Milk Chocolate</h1>
                 <h4>250g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$5.29</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product" id="caramilk">
-                <h1> Cadbury Caramilk Chocolate</h1>
+            </button>
+            <button onclick="details(event)" class="product" id="caramilk"><h1> Cadbury Caramilk Chocolate</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$2.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id ="ferrero">
-                <h1>Ferrero Collection Chocolates</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id ="ferrero"><h1>Ferrero Collection Chocolates</h1>
                 <h4>172g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$11.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product" id="slab">
-                <h1>Whittaker's Chocolate Peanut Slab</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id ="slab"><h1>Whittaker's Chocolate Peanut Slab</h1>
                 <h4>50g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$1.79</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product" id="roses">
-                <h1>Cadbury Roses Chocolate</h1>
+            </button>
+            <button onclick="details(event)" class="product" id="roses"><h1>Cadbury Roses Chocolate</h1>
                 <h4>225g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$8.49</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product" id="almond">
-                <h1>Nestle Milk Chocolate Scorched Almonds</h1>
+            </button>
+            <button onclick="details(event)" class="product" id="almond"><h1>Nestle Milk Chocolate Scorched Almonds</h1>
                 <h4>240g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$6.49</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id="hotchocolate">
-                <h1>Cadbury Drinking Chocolate</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id="hotchocolate"><h1>Cadbury Drinking Chocolate</h1>
                 <h4>400g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$4.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id="lindt">
-                <h1>Lindt Assorted Chocolate Pouch</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id="lindt"><h1>Lindt Assorted Chocolate Pouch</h1>
                 <h4>125g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$7.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id="mm">
-                <h1>M&M's Milk Chocolate Bag</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id="mm"><h1>M&M's Milk Chocolate Bag</h1>
                 <h4>180g</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$2.99</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <a href="product_details.html" class="product notonsale" id="milk">
-                <h1>Lewis Road Fresh Chocolate Milk</h1>
+            </button>
+            <button onclick="details(event)" class="product notonsale" id="milk"><h1>Lewis Road Fresh Chocolate Milk</h1>
                 <h4>300ml</h4>
                 <div class="addtocart_wrapper">
                     <div class="price">
                         <h1>$3.89</h1>
                         <h4>ea</h4>
                     </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
                 </div>
-            </a>
-            <!-- <a href="product_details.html" class="product notonsale">
-                <h1>Cadbury Dairy Milk Chocolate Block 13 Sale</h1>
-                <h4>180g</h4>
-                <div class="addtocart_wrapper">
-                    <div class="price">
-                        <h1>$3.59</h1>
-                        <h4>ea</h4>
-                    </div>
-                    <button class="addtocart_button button">
-                        <span class="material-icons-outlined button_icon">add_shopping_cart</span>
-                        <span class="button_text">Add to cart</span>
-                    </button>
-                </div>
-            </a> -->
+            </button>
         </div>
     </main>
 </body>

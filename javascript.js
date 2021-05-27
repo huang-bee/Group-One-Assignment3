@@ -1,3 +1,7 @@
+var cart = [];
+var elements = [];
+var product_name = 'test';
+
 // When the user clicks on the button, toggle between hiding and showing the dropdown content
 function myFunction() {
   const dropdown = document.getElementById("myDropdown");
@@ -108,25 +112,122 @@ inputenter.addEventListener("keyup", function (event) {
   }
 });
 
-// initiates list content (elements) and initiates local storage
-var elements = [];
 window.onload = function () {
-  if (JSON.parse(localStorage.getItem("elements")) != null)
+
+  if (JSON.parse(localStorage.getItem("elements")) != null) 
     elements = JSON.parse(localStorage.getItem("elements"));
+
+    if (JSON.parse(localStorage.getItem("cart")) != null) 
+    cart = JSON.parse(localStorage.getItem("cart"));
+
+
+    if (cart.length == 0) {
+      document.getElementById('cart_wrapper').style.display = 'none';
+      document.getElementById('list_wrapper').style.gridTemplateColumns = '1fr';
+      document.getElementById('list_item_wrapper').style.marginLeft = 'auto';
+      document.getElementById('list_item_wrapper').style.marginRight = 'auto';
+      document.getElementById('list_item_wrapper').style.maxWidth = '800px';
+      
+
+      
+    } else {
+      document.getElementById('cart_wrapper').style.display = 'flex';
+      document.getElementById('list_wrapper').style.gridTemplateColumns = 'auto 540px';
+      document.getElementById('list_item_wrapper').style.marginLeft = '0';
+      document.getElementById('list_item_wrapper').style.marginRight = '0';
+      document.getElementById('list_item_wrapper').style.maxWidth = '100%';
+
+    }
+
+    document.getElementById('items_in_cart').innerHTML = cart.length + ' items in cart'
+    document.getElementById('items_in_list').innerHTML = elements.length + ' items in list'
+
   console.log(elements);
+  console.log(cart);
   display();
+  displayCart();
+  document.getElementById('product_name').innerHTML = product_name;
 };
+
+function updateCart() {
+  cart = JSON.parse(localStorage.getItem("cart"));
+
+  cart.push(document.getElementById('product_name').innerHTML);
+
+  localStorage.setItem("cart", JSON.stringify(cart));
+  window.location.href = 'index.html';
+
+}
+
+function addCart() {
+  window.location.href = 'index.html';
+  cart.push('product name');
+  if (localStorage.getItem("cart") == null) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+  displayCart();
+}
+
+function displayCart() {
+  document.querySelector(".cart_item_wrapper").innerHTML = "";
+  document.querySelector(".cart_list").innerHTML = "";
+
+  for (var i = 0; i < cart.length; i++) {
+  document.querySelector(".cart_item_wrapper").innerHTML += "<li class='cart_list_item'><button class='button remove_button' onclick='delCart(" + i + ")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><div class='cart_middle_wrapper'><span class='cart_item_text'>" + cart[i] + "</span><span class='button_text'>Quantity</span><span class='button_text'>180g</div><div class='cart_end_wrapper'><span class='button_text'>$3.59 ea</span><span class='cart_item_text'>$3.59</span><span class='button_text'>$1.99 per 100g</span></div></li>";
+  document.querySelector(".cart_list").innerHTML += "<li class='cart_item'><span class='button_text'>" + cart[i] + "</span><span class='button_text cost'>$3.59</span></li>";
+  }
+}
+
+//remove the list item from the local storage
+function delCart(index) {
+  cart.splice(index, 1);
+
+  if (localStorage.getItem("cart") == null) {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  } else {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }
+
+  cart = JSON.parse(localStorage.getItem("cart"));
+  if (cart.length == 0) {
+    document.getElementById('cart_wrapper').style.display = 'none';
+    document.getElementById('list_wrapper').style.gridTemplateColumns = '1fr';
+    document.getElementById('list_item_wrapper').style.marginLeft = 'auto';
+    document.getElementById('list_item_wrapper').style.marginRight = 'auto';
+    document.getElementById('list_item_wrapper').style.maxWidth = '800px';
+
+    
+  } else {
+    document.getElementById('cart_wrapper').style.display = 'flex';
+    document.getElementById('list_wrapper').style.gridTemplateColumns = 'auto 540px';
+    document.getElementById('list_item_wrapper').style.marginLeft = '0';
+    document.getElementById('list_item_wrapper').style.marginRight = '0';
+    document.getElementById('list_item_wrapper').style.maxWidth = '100%';
+
+  }
+
+  document.getElementById('items_in_cart').innerHTML = cart.length + ' items in cart';
+
+  displayCart();
+}
 
 
 // stores the list text in local storage
 function addElement() {
   if (document.querySelector(".question_text_box").value.trim() != "") {
     elements.push(document.querySelector(".question_text_box").value.trim());
+
+
     if (localStorage.getItem("elements") == null) {
       localStorage.setItem("elements", JSON.stringify(elements));
     } else {
       localStorage.setItem("elements", JSON.stringify(elements));
     }
+
+    document.getElementById('items_in_list').innerHTML = elements.length + ' items in list';
+
     display();
   }
 }
@@ -135,27 +236,25 @@ function addElement() {
 function display() {
   document.querySelector(".list_item_wrapper").innerHTML = "";
 
-  for (var i = 0; i < elements.length; i++)
+  for (var i = 0; i < elements.length; i++) 
     document.querySelector(".list_item_wrapper").innerHTML += "<li class='list_item'><button class='button remove_button' onclick='del(" + i + ")'><span class='button_icon remove_button_icon material-icons-outlined'>delete</span><span class='button_text remove_button_text'>Remove item</span></button><span class='list_item_text button_text'>" + elements[i] + `<button onclick = 'redirect(event)' class='button browse_button'><span class='button_icon browse_button_icon material-icons-outlined'>search</span><span class='button_text browse_button_text'>Browse range</span></button></span></span></li>`;
+  
   console.log(document.querySelector(".question_text_box").value);
   document.querySelector(".question_text_box").value = "";
 }
 
-//Removes items from cart
-  const removeCartItemsButtons = document.getElementsByClassName('remove_button_cart');
-  console.log(removeCartItemsButtons);
-  for (var i = 0; i < removeCartItemsButtons.length; i++){
-        var button = removeCartItemsButtons[i];
-        button.addEventListener(`click`, removeCartItem);
-}
+//remove the list item from the local storage
+function del(index) {
+  elements.splice(index, 1);
+  if (localStorage.getItem("elements") == null) {
+    localStorage.setItem("elements", JSON.stringify(elements));
+  } else {
+    localStorage.setItem("elements", JSON.stringify(elements));
+  }
+  document.getElementById('items_in_list').innerHTML = elements.length + ' items in list';
 
-//removes items from cart button
-function removeCartItem(event){
-  var buttonClicked = event.target;
-  buttonClicked.parentElement.remove();
-  updateCartTotal();
+  display();
 }
-
 
 
 // if the user has added either bread or chocolate link them to the correct page, if not, link them to the no results page
@@ -174,56 +273,88 @@ function redirect(event) {
   }
 }
 
-function details(event) {
+function show_loginprompt() {
+  const place_order_button = document.getElementById('place_order_button');
+  const place_order_button_text = document.getElementById('place_order_button_text');
+  document.getElementById("login_wrapper").style.display = "flex";
+  document.getElementById("deliveryorpickup_wrapper").style.display = "none";
+  document.getElementById("deliverydetails_wrapper").style.display = "none";
+  document.getElementById("purchasedetails_wrapper").style.display = "none";
+  document.getElementById("inner_nav_loginprompt").style.display = "flex";
+  document.getElementById("inner_nav_deliveryorpickup").style.display = "none";
+  document.getElementById("inner_nav_deliverydetails").style.display = "none";
+  document.getElementById("inner_nav_purchasedetails").style.display = "none";
+  document.getElementById("inner_nav_confirmorder").style.display = "none";
+  document.getElementById('confirm_order').style.display = "none";
+  place_order_button.style.display = "flex"
+  document.getElementById("purchase_details_wrapper").style.display = "flex";
+  document.getElementById("checkout_wrapper").style.gridTemplateColumns = "auto 540px";
 
-  alert(event.target.firstChild.innerHTML);
-  var x = event.target.firstChild.innerHTML;
-  document.getElementById('product_name').textContent = x;
+  place_order_button_text.innerHTML = "Place order";
 }
 
-
-//remove the list item from the local storage
-function del(index) {
-  elements.splice(index, 1);
-  if (localStorage.getItem("elements") == null) {
-    localStorage.setItem("elements", JSON.stringify(elements));
-  } else {
-    localStorage.setItem("elements", JSON.stringify(elements));
-  }
-  display();
-}
-
-// Get the modal
-var modal = document.getElementById('id01');
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function (event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
 
 function show_deliveryorpickup() {
+  const place_order_button = document.getElementById('place_order_button');
+  const place_order_button_text = document.getElementById('place_order_button_text');
   document.getElementById("login_wrapper").style.display = "none";
   document.getElementById("deliveryorpickup_wrapper").style.display = "flex";
+  document.getElementById("deliverydetails_wrapper").style.display = "none";
+  document.getElementById("purchasedetails_wrapper").style.display = "none";
   document.getElementById("inner_nav_loginprompt").style.display = "none";
   document.getElementById("inner_nav_deliveryorpickup").style.display = "flex";
+  document.getElementById("inner_nav_deliverydetails").style.display = "none";
+  document.getElementById("inner_nav_purchasedetails").style.display = "none";
+  document.getElementById("inner_nav_confirmorder").style.display = "none";
+  document.getElementById('confirm_order').style.display = "none";
+  place_order_button.style.display = "flex"
+  document.getElementById("purchase_details_wrapper").style.display = "flex";
+  document.getElementById("checkout_wrapper").style.gridTemplateColumns = "auto 540px";
+
+  place_order_button_text.innerHTML = "Place order";
 }
 
 function show_deliverydetails() {
+  const place_order_button = document.getElementById('place_order_button');
+  const place_order_button_text = document.getElementById('place_order_button_text');
+  document.getElementById("login_wrapper").style.display = "none";
   document.getElementById("deliveryorpickup_wrapper").style.display = "none";
   document.getElementById("deliverydetails_wrapper").style.display = "flex";
+  document.getElementById("purchasedetails_wrapper").style.display = "none";
+  document.getElementById("inner_nav_loginprompt").style.display = "none";
   document.getElementById("inner_nav_deliveryorpickup").style.display = "none";
   document.getElementById("inner_nav_deliverydetails").style.display = "flex";
+  document.getElementById("inner_nav_purchasedetails").style.display = "none";
+  document.getElementById("inner_nav_confirmorder").style.display = "none";
+  document.getElementById('confirm_order').style.display = "none";
+  place_order_button.style.display = "flex"
+  document.getElementById("purchase_details_wrapper").style.display = "flex";
+  document.getElementById("checkout_wrapper").style.gridTemplateColumns = "auto 540px";
+
+  place_order_button_text.innerHTML = "Place order";
 }
 
 function show_purchasedetails() {
+  const place_order_button = document.getElementById('place_order_button');
+  const place_order_button_text = document.getElementById('place_order_button_text');
+  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("deliveryorpickup_wrapper").style.display = "none";
   document.getElementById("deliverydetails_wrapper").style.display = "none";
   document.getElementById("purchasedetails_wrapper").style.display = "flex";
+  document.getElementById("confirm_order").style.display = "flex";
+  document.getElementById("inner_nav_loginprompt").style.display = "none";
+  document.getElementById("inner_nav_deliveryorpickup").style.display = "none";
   document.getElementById("inner_nav_deliverydetails").style.display = "none";
   document.getElementById("inner_nav_purchasedetails").style.display = "flex";
-}
+  document.getElementById("inner_nav_confirmorder").style.display = "none";
+  document.getElementById('confirm_order').style.display = "none";
+  place_order_button.style.display = "flex"
 
+  document.getElementById("purchase_details_wrapper").style.display = "flex";
+  document.getElementById("checkout_wrapper").style.gridTemplateColumns = "auto 540px";
+
+  place_order_button_text.innerHTML = "Place order";
+}
 
 function changehref(e) {
 
@@ -247,6 +378,16 @@ function changehref(e) {
 }
 
 function show_confirmorder() {
+
+  document.getElementById("login_wrapper").style.display = "none";
+  document.getElementById("deliveryorpickup_wrapper").style.display = "none";
+  document.getElementById("deliverydetails_wrapper").style.display = "none";
+  document.getElementById("purchasedetails_wrapper").style.display = "none";
+  document.getElementById("inner_nav_loginprompt").style.display = "none";
+  document.getElementById("inner_nav_deliveryorpickup").style.display = "none";
+  document.getElementById("inner_nav_deliverydetails").style.display = "none";
+  document.getElementById("inner_nav_purchasedetails").style.display = "none";
+  document.getElementById("inner_nav_confirmorder").style.display = "flex";
 
   const place_order_button = document.getElementById('place_order_button');
   const place_order_button_text = document.getElementById('place_order_button_text');
@@ -273,7 +414,6 @@ function show_cards_wrapper() {
   document.getElementById("inner_nav_password").style.display = "none";
 }
 
-
 function show_createaccount() {
   document.getElementById("cards_wrapper").style.display = "none";
   document.getElementById("createaccount_wrapper").style.display = "flex";
@@ -296,33 +436,21 @@ function show_password() {
   document.getElementById("inner_nav_password").style.display = "flex";
 }
 
-var quantityInputs = document.getElementsByClassName(`quantity`)
-for (var i = 0; i < removeCartItemsButtons.length; i++){
-    var input = quantityInputs[i];
-    input.addEventListener(`change`, quantityChanged);
+
+function details(event) {
+  var x = event.target.firstChild.innerHTML;
+  var url = getComputedStyle(event.target).getPropertyValue('background-image');
+  document.getElementById('product_name').innerHTML = x;
+  document.getElementById('product_name_nav').innerHTML = x;
+
+  document.getElementById('product_details_image').style.backgroundImage = url;
+
+  document.querySelector("html").style.overflow = 'hidden';
+  document.getElementById("modal01").style.display = "block";
 }
 
-function quantityChanged(event){
-  var input = event.target;
-  if(isNaN(input.value) || input.value <= 0){
-      input.value = 1;
-  }
-  updateCartTotal();
+function closeModal() {
+    document.querySelector("html").style.overflow = 'overlay';
+    document.getElementById("modal01").style.display = "none";
 }
-
-function updateQuantity(event){
-  var itemInCart = document.getElementsByClassName('list_item_cart');
-  var total = 0
-  for (var i = 0; i < cartRows.length; i++) {
-    var itemInCart = cartRows[i];
-    var quantityElement = cartRow.getElementsByClassName(`quantity`)[0];
-    var priceElement = document.getElementsByClassName(`item_price_small`)[0];
-    var price = parseFloat(priceElement.innerText.replace(`$`,``));
-    var quantity = quantityElement.value;
-    total = total + (price * quantity)
-  }
-  
-  total = Math.round(total * 100)/100;
-  document.getElementsByClassName(`item_price`)[0].innerText = `$`+ total;
-} 
 

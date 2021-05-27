@@ -20,6 +20,7 @@
             <span class="button_text">My Shopping List</span>
         </a>
         <nav>
+            <button class="nav_button button" onclick="updateCart();"><span class="button_text">Add to cart</span></button>
             <a href="index.html" class="nav_button button"><span class="button_text">List</span></a>
             <a href="#" class="nav_button button"><span class="button_text">About</span></a>
             <a href="#" class="nav_button button"><span class="button_text">Log in/Sign up</span></a>
@@ -70,7 +71,7 @@
                         <h1>$3.59</h1>
                         <h4>ea</h4>
                     </div>
-                    <a href="Cart.html" class="addtocart_button button">
+                    <button onclick="updateCart" class="addtocart_button button">
                         <span class="material-icons-outlined button_icon">add_shopping_cart</span>
                         <span class="button_text">Add to cart</span>
                     </a>

@@ -32,25 +32,36 @@
             <button class="button"><span class="button_text">Log in/Sign up:</span></button>
         </div>
         <div class="inner_nav inner_nav_checkout" id="inner_nav_deliveryorpickup">
-            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <button onclick="show_loginprompt()" class="button"><span class="button_text">Log in/Signup</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
             <button class="button"><span class="button_text" id="product_name_nav">Delivery or pickup:</span></button>
         </div>
         <div class="inner_nav inner_nav_checkout" id="inner_nav_deliverydetails">
-            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <button onclick="show_loginprompt()" class="button"><span class="button_text">Log in/Signup</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
-            <button onclick="show_existingaccount()" class="button"><span class="button_text" id="product_name_nav">Delivery or pickup</span></button>
+            <button onclick="show_deliveryorpickup()" class="button"><span class="button_text">Delivery or pickup</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
             <button class="button"><span class="button_text" id="product_name_nav">Delivery details:</span></button>
         </div>
         <div class="inner_nav inner_nav_checkout" id="inner_nav_purchasedetails">
-            <button onclick="show_cards_wrapper()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <button onclick="show_loginprompt()" class="button"><span class="button_text">Log in/Signup</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
-            <button onclick="show_existingaccount()" class="button"><span class="button_text" id="product_name_nav">Delivery or pickup</span></button>
+            <button onclick="show_deliveryorpickup()" class="button"><span class="button_text">Delivery or pickup</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
-            <button class="button"><span class="button_text" id="product_name_nav">Delivery details</span></button>
+            <button onclick="show_deliverydetails()" class="button"><span class="button_text">Delivery details</span></button>
             <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
             <button class="button"><span class="button_text" id="product_name_nav">Billing details:</span></button>
+        </div>
+        <div class="inner_nav inner_nav_checkout" id="inner_nav_confirmorder">
+            <button onclick="show_loginprompt()" class="button"><span class="button_text">Log in/Signup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_deliveryorpickup()" class="button"><span class="button_text">Delivery or pickup</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_deliverydetails()" class="button"><span class="button_text">Delivery details</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button onclick="show_purchasedetails()" class="button"><span class="button_text">Billing details</span></button>
+            <span class="material-icons-outlined button_icon inner_nav_divider">chevron_right</span>
+            <button class="button"><span class="button_text">Confirm order:</span></button>
         </div>
         <div class="checkout_wrapper" id="checkout_wrapper">
             <div class="purchase_details_wrapper" id="purchase_details_wrapper">
@@ -157,8 +168,8 @@
                 </div>
                 </section>
             </div>
-            <div class="cart_wrapper">
-                <div class="cart_content">
+            <div class="cart_wrapper_checkout">
+                <div class="checkout_cart_content">
                     <h4>Cart overview</h4>
                     <h4 class="items_in_list">8 items in list</h4>
                     <h4 class="items_in_cart">1 item in cart</h4>

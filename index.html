@@ -27,7 +27,7 @@
     </header>
     <div class="additem_container">
         <div class="input_container">
-            <button type="submit" class="additem_button button" onclick="addElement()">
+            <button type="submit" class="additem_button button" onclick="addElement();">
                 <span class="material-icons-outlined button_icon">add</span>
                 <span class="button_text">Add item</span>
             </button>
@@ -37,10 +37,38 @@
         </div>
     </div>
     <main>
+        <div class="list_wrapper" id="list_wrapper">
         <div class="list_wrapper_centered">
-            <ul class="list_item_wrapper todo-items">
+            <ul class="cart_item_wrapper">
+            </ul>
+            <ul class="list_item_wrapper" id="list_item_wrapper">
             </ul>
         </div>
+        <div class="cart_wrapper" id="cart_wrapper">
+            <div class="cart_content">
+                <h4>Cart overview</h4>
+                <h4 class="items_in_list" id="items_in_list">5 items in list</h4>
+                <h4 class="items_in_cart" id="items_in_cart">4 items in cart</h4>
+                <ul class="cart_list">
+                </ul>
+                <div class="total"><span class="button_text">Total:</span><span class="button_text total_price">$3.59</span></div>
+            </div>
+            <div class="card_buttons_wrapper">
+                <button type="submit" class="card_button button">
+                    <span class="material-icons-outlined button_icon">card_giftcard</span>
+                    <span class="button_text">Add Promo Code</span>
+                </button>
+                <button type="submit" class="card_button button">
+                    <span class="material-icons-outlined button_icon">credit_card</span>
+                    <span class="button_text">Add Clubcard</span>
+                </button>
+            </div>
+            <a href="checkout.html" class="checkout_button button">
+                <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                <span class="button_text">Checkout</span>
+            </a>
+        </div>
+    </div>
     </main>
     <script src="javascript.js"></script>
 </body>
