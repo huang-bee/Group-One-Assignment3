@@ -31,8 +31,8 @@
         <div class="inner_nav">
             <a href="signup.html" class="button"><span class="button_text">Log in/Sign up</span></a>
         </div>
-        <section id="login_wrapper">
-            <div class="card_buttons_wrapper">
+        <section class="existingaccount" id="cards_wrapper">
+            <div class="login_cards_wrapper">
                 <button type="submit" class="login_button button" onclick="show_createaccount()">
                     <span class="button_text">I am a new user</span>
                 </button>
@@ -41,9 +41,8 @@
                 </button>
             </div>
         </section>
-        <section id="createaccount_wrapper">
-            <div class="all_inputs">
-            <div class="inputs_wrapper">
+        <section class="existingaccount" id="createaccount_wrapper">
+            <div class="all_stores">
                 <div class="input_wrapper emailPhoneNumber">
                     <input type="text" placeholder="Email or phone number">
                 </div>
@@ -53,39 +52,37 @@
                 <div class="input_wrapper confirmPassword">
                     <input type="text" placeholder="Confirm password"> 
                 </div>
-                <button type="submit" class="create_button" onclick="show_accountmade()">
+                <a href="accountMade.html" class="create_button button">
                 <span class="button_text">Create account</span>
-            </button>
-            </div>
+                </a>
             </div>
         </section>
-        <section id="existingaccount_wrapper">
-            <div class="all_inputs">
-            <div class="inputs_wrapper">
+        <section class="existingaccount" id="existingaccount_wrapper">
+            <div class="all_stores">
                 <div class="input_wrapper emailPhoneNumber">
                     <input type="text" placeholder="Email or phone number">
                 </div>
-                <button class="forgot_button">Forgot email?</button>
-                <button type="submit" class="create_button" onclick="show_password()">
+                <button type="submit" class="create_button button" onclick="show_password()">
                     <span class="button_text">Next</span>
-            </div>
+                    </button>
+                <button type="submit" class="forgot_button button" onclick="show_()">
+                    <span class="button_text" >Forgot email?</span>
+                    </button>
             </div>
         </section>
-        <section id="password_wrapper">
-            <div class="all_inputs">
-            <div class="inputs_wrapper">
+        <section class="existingaccount" id="password_wrapper">
+            <div class="all_stores">
                 <div class="input_wrapper existingPassword">
                     <input type="text" placeholder="Password">
                 </div>
-                <button class="forgot_button">Forgot password?</button>
-                <button type="submit" class="create_button" onclick="show_accountmade()">
+                <a href="index.html" class="create_button button" onclick="show_accountmade()">
                     <span class="button_text">Sign in</span>
-                </button>
-            </div>
+                </a>
+                <button type="submit" class="forgot_button button" onclick="show_password()">
+                    <span class="button_text">Forgot password?</span>
+                    </button>
             </div>
         </section>
-
-
     </main>
     <script src="javascript.js"></script>
 </body>
