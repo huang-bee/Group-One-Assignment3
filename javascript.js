@@ -141,6 +141,22 @@ function display() {
   document.querySelector(".question_text_box").value = "";
 }
 
+//Removes items from cart
+  const removeCartItemsButtons = document.getElementsByClassName('remove_button_cart');
+  console.log(removeCartItemsButtons);
+  for (var i = 0; i < removeCartItemsButtons.length; i++){
+        var button = removeCartItemsButtons[i];
+        button.addEventListener(`click`, removeCartItem);
+}
+
+//removes items from cart button
+function removeCartItem(event){
+  var buttonClicked = event.target;
+  buttonClicked.parentElement.remove();
+  updateCartTotal();
+}
+
+
 
 // if the user has added either bread or chocolate link them to the correct page, if not, link them to the no results page
 function redirect(event) {
@@ -279,3 +295,34 @@ function show_password() {
   document.getElementById("inner_nav_email").style.display = "none";
   document.getElementById("inner_nav_password").style.display = "flex";
 }
+
+var quantityInputs = document.getElementsByClassName(`quantity`)
+for (var i = 0; i < removeCartItemsButtons.length; i++){
+    var input = quantityInputs[i];
+    input.addEventListener(`change`, quantityChanged);
+}
+
+function quantityChanged(event){
+  var input = event.target;
+  if(isNaN(input.value) || input.value <= 0){
+      input.value = 1;
+  }
+  updateCartTotal();
+}
+
+function updateQuantity(event){
+  var itemInCart = document.getElementsByClassName('list_item_cart');
+  var total = 0
+  for (var i = 0; i < cartRows.length; i++) {
+    var itemInCart = cartRows[i];
+    var quantityElement = cartRow.getElementsByClassName(`quantity`)[0];
+    var priceElement = document.getElementsByClassName(`item_price_small`)[0];
+    var price = parseFloat(priceElement.innerText.replace(`$`,``));
+    var quantity = quantityElement.value;
+    total = total + (price * quantity)
+  }
+  
+  total = Math.round(total * 100)/100;
+  document.getElementsByClassName(`item_price`)[0].innerText = `$`+ total;
+} 
+

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link
+        href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <title>My Shopping list</title>
+</head>
+
+<body>
+    <header>
+        <a href="#" class="home_button button">
+            <span class="material-icons-outlined button_icon md-36">view_list</span>
+            <span class="button_text">My Shopping List</span>
+        </a>
+        <nav>
+            <a href="#" class="nav_button nav_button_active button"><span class="button_text">List</span></a>
+            <a href="#" class="nav_button button"><span class="button_text">About</span></a>
+            <a href="signup.html" class="nav_button button"><span class="button_text">Log in/Sign up</span></a>
+        </nav>
+    </header>
+    <div class="additem_container">
+        <div class="input_container">
+            <button type="submit" class="additem_button button" onclick="addElement()">
+                <span class="material-icons-outlined button_icon">add</span>
+                <span class="button_text">Add item</span>
+            </button>
+            <div class="resizable_text_box">
+                <input type="text" id="myInput" class="question_text_box" placeholder="Write here..."/>
+            </div>
+        </div>
+    </div>
+    <main>
+        <div class="list_wrapper">
+        <ul class="list_item_wrapper_cart todo-items">
+            <li class='list_item_cart'>
+                <button class='button remove_button remove_button_cart' onclick='del(" + i + ")'>
+                    <span class='button_icon remove_button_icon material-icons-outlined'>delete</span>
+                    <span class='button_text remove_button_text'>Remove item</span>
+                </button>
+                <span class="cart_item_wrapper">
+                    <span class='list_item_text_cart button_text item-title'> Cadbury Dairy Milk Chocolate Block
+                        <h4 class="item_price_small">$3.59</h4>
+                    </span>
+                    <span class="quantity_items">
+                        <h4 class="quantity_text">Quantity</h4>
+                        <input type="number" name="quantity" class="quantity" value="1">
+                        <h1 class="item_price">$3.59</h1>                      
+                    </span>
+                    <span class="weights">
+                    <h4 class="weight">180g</h4>
+                    <h4 class="weight_per">$1.99 per 100g</h4>
+                    </span>
+                </span>
+                
+            </li>
+            <li class='list_item_cart'>
+                <button class='button remove_button remove_button_cart' onclick='del(" + i + ")'>
+                    <span class='button_icon remove_button_icon material-icons-outlined'>delete</span>
+                    <span class='button_text remove_button_text'>Remove item</span>
+                </button>
+                <span class="cart_item_wrapper">
+                    <span class='list_item_text_cart button_text item-title'> Arnott's Salada Original Crackers
+                        <h4 class="item_price_small">$3.29</h4>
+                    </span>
+                    <span class="quantity_items">
+                        <h4 class="quantity_text">Quantity</h4>
+                        <input type="number" name="quantity" class="quantity" value="1">
+                        <h1 class="item_price">$3.29</h1>                      
+                    </span>
+                    <span class="weights">
+                    <h4 class="weight">250g</h4>
+                    <h4 class="weight_per">$1.65 per 100g</h4>
+                    </span>
+                </span>
+                
+            </li>
+            <li class='list_item_cart'>
+                <button class='button remove_button remove_button_cart' onclick='del(" + i + ")'>
+                    <span class='button_icon remove_button_icon material-icons-outlined'>delete</span>
+                    <span class='button_text remove_button_text'>Remove item</span>
+                </button>
+                <span class="cart_item_wrapper">
+                    <span class='list_item_text_cart button_text item-title'> Tip Top Super Soft White Bread
+                        <h4 class="item_price_small">$3.79</h4>
+                    </span>
+                    <span class="quantity_items">
+                        <h4 class="quantity_text">Quantity</h4>
+                        <input type="number" name="quantity" class="quantity" value="2">
+                        <h1 class="item_price">$7.58</h1>                      
+                    </span>
+                    <span class="weights">
+                    <h4 class="weight">700g</h4>
+                    <h4 class="weight_per">$0.54 per 100g</h4>
+                    </span>
+                </span>
+                
+            </li>
+            <li class='list_item_cart'>
+                <button class='button remove_button remove_button_cart' onclick='del(" + i + ")'>
+                    <span class='button_icon remove_button_icon material-icons-outlined'>delete</span>
+                    <span class='button_text remove_button_text'>Remove item</span>
+                </button>
+                <span class="cart_item_wrapper">
+                    <span class='list_item_text_cart button_text item-title'> Anchor Blue Milk 2L
+                        <h4 class="item_price_small">$4.66</h4>
+                    </span>
+                    <span class="quantity_items">
+                        <h4 class="quantity_text">Quantity</h4>
+                        <input type="number" name="quantity" class="quantity" value="1">
+                        <h1 class="item_price">$4.66</h1>                      
+                    </span>
+                    <span class="weights">
+                    <h4 class="weight">2L</h4>
+                    <h4 class="weight_per">$0.23 per 100ml</h4>
+                    </span>
+                </span>
+            </li>
+            <li class='list_item_cart_not_selected'>
+                <button class='button remove_button' onclick='del(" + i + ")'>
+                    <span class='button_icon remove_button_icon material-icons-outlined'>delete</span>
+                    <span class='button_text remove_button_text'>Remove item</span>
+                </button>
+                <span class='list_item_text button_text'> Eggs
+                    <button onclick = 'redirect(event)' class='button browse_button'>
+                        <span class='button_icon browse_button_icon material-icons-outlined'>search</span>
+                        <span class='button_text browse_button_text'>Browse range</span>
+                    </button>
+                </span>
+            </li>
+        </ul>
+        <div class="cart_wrapper">
+            <div class="cart_content">
+                <h4>Cart overview</h4>
+                <h4 class="items_in_list">5 items in list</h4>
+                <h4 class="items_in_cart">4 item in cart</h4>
+                <ul class="cart_list">
+                    <li class="cart_item"><span class="button_text">Cadbury Dairy Milk Chocolate Block</span><span class="button_text item_cart_price">$3.59</span></li>
+                    <li class="cart_item"><span class="button_text">Arnott's Salada Original Crackers</span><span class="button_text item_cart_price">$3.29</span></li>
+                    <li class="cart_item"><span class="button_text">Tip Top Super Soft White Bread</span><span class="button_text item_cart_price">$7.58</span></li>
+                    <li class="cart_item"><span class="button_text">Anchor Blue Milk 2L</span><span class="button_text item_cart_price">$4.66</span></li>
+                </ul>
+                <div class="total"><span class="button_text">Total:</span><span class="button_text total_price">$3.59</span></div>
+            </div>
+            <div class="card_buttons_wrapper">
+                <button type="submit" class="card_button button">
+                    <span class="material-icons-outlined button_icon">card_giftcard</span>
+                    <span class="button_text">Add Promo Code</span>
+                </button>
+                <button type="submit" class="card_button button">
+                    <span class="material-icons-outlined button_icon">credit_card</span>
+                    <span class="button_text">Add Clubcard</span>
+                </button>
+            </div>
+            <a href="checkout.html" class="checkout_button button">
+                <span class="material-icons-outlined button_icon">add_shopping_cart</span>
+                <span class="button_text">Checkout</span>
+            </a>
+        </div>
+    </div>
+    </main>
+    <script src="javascript.js"></script>
+</body>
+
+</html>
