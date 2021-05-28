@@ -163,7 +163,7 @@ function updateCart() {
 
 function addCart() {
   window.location.href = 'index.html';
-  cart.push('product name');
+  cart.push('product name test');
   if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
   } else {
