@@ -8,6 +8,8 @@ function myFunction() {
   const dropdown_button = document.getElementById("myDropdown_button");
   var x = document.getElementById("dropdown_arrow");
 
+  //test
+
   dropdown.classList.toggle("show");
   dropdown_button.classList.toggle("dropdown_button_active");
 
