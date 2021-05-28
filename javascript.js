@@ -152,21 +152,20 @@ window.onload = function () {
 };
 
 function updateCart() {
-  if (localStorage.getItem("cart") == null) {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  } else {
-    localStorage.setItem("cart", JSON.stringify(cart));
-  }
+  // if (localStorage.getItem("cart") == null) {
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  // } else {
+  //   localStorage.setItem("cart", JSON.stringify(cart));
+  // }
   cart = JSON.parse(localStorage.getItem("cart"));
   cart.push(document.getElementById('product_name').innerHTML);
   localStorage.setItem("cart", JSON.stringify(cart));
   window.location.href = 'index.html';
+  // alert(cart);
 
 }
 
 function addCart() {
-  window.location.href = 'index.html';
-  cart.push('product name test');
   if (localStorage.getItem("cart") == null) {
     localStorage.setItem("cart", JSON.stringify(cart));
   } else {
